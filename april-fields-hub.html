@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>April Fields</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #F5EFE6;
+      --sand: #E8DCCB;
+      --gold: #C4973A;
+      --gold-light: #D4A84B;
+      --bark: #6B4F35;
+      --earth: #3D2B1F;
+      --sage: #8A9E7E;
+      --charcoal: #2C2A27;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      margin-bottom: 36px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .avatar-ring {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--warm-white), var(--sand));
+      box-shadow: 0 0 0 6px var(--cream), 0 0 0 7px var(--sand);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar-initials {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    /* swap .avatar-initials for an <img> tag if you add a photo */
+
+    .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: var(--earth);
+      line-height: 1.1;
+    }
+
+    .name span {
+      display: block;
+      font-style: italic;
+      font-size: 1rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--bark);
+      opacity: 0.75;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0;
+      animation: fadeUp 0.9s ease 0.1s both;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--sand));
+    }
+    .divider::after { background: linear-gradient(to left, transparent, var(--sand)); }
+
+    .divider-icon {
+      font-size: 0.9rem;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bark);
+      opacity: 0.55;
+      align-self: flex-start;
+      margin-bottom: 10px;
+      margin-top: 4px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeUp 0.9s ease 0.2s both;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.06);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .btn:hover::after { opacity: 1; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    /* Primary — gold */
+    .btn-primary {
+      background: var(--gold);
+      color: var(--cream);
+      box-shadow: 0 4px 16px rgba(196,151,58,0.28);
+    }
+    .btn-primary:hover { background: var(--gold-light); box-shadow: 0 6px 20px rgba(196,151,58,0.38); }
+
+    /* Secondary — bark */
+    .btn-secondary {
+      background: var(--bark);
+      color: var(--cream);
+      box-shadow: 0 4px 12px rgba(107,79,53,0.2);
+    }
+    .btn-secondary:hover { background: #7a5c40; }
+
+    /* Outline */
+    .btn-outline {
+      background: transparent;
+      color: var(--earth);
+      border: 1px solid var(--sand);
+      box-shadow: none;
+    }
+    .btn-outline:hover { background: var(--warm-white); border-color: var(--gold); color: var(--bark); }
+
+    /* Ghost */
+    .btn-ghost {
+      background: var(--warm-white);
+      color: var(--charcoal);
+      border: 1px solid var(--sand);
+    }
+    .btn-ghost:hover { border-color: var(--bark); background: var(--sand); }
+
+    .btn-label { flex: 1; text-align: left; }
+    .btn-icon { font-size: 1rem; opacity: 0.7; margin-right: 14px; }
+    .btn-arrow { opacity: 0.4; font-size: 0.75rem; }
+
+    /* ── SOCIAL ROW ── */
+    .social-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      animation: fadeUp 0.9s ease 0.4s both;
+    }
+
+    .social-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 16px;
+      border-radius: 100px;
+      background: var(--warm-white);
+      border: 1px solid var(--sand);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--bark);
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .social-pill:hover {
+      background: var(--gold);
+      color: var(--cream);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(196,151,58,0.3);
+    }
+
+    .social-icon { font-size: 0.9rem; }
+
+    /* ── PAYMENT ROW ── */
+    .pay-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      animation: fadeUp 0.9s ease 0.5s both;
+    }
+
+    .pay-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      border: 1px solid var(--sand);
+      background: var(--warm-white);
+      color: var(--earth);
+    }
+
+    .pay-btn:hover {
+      border-color: var(--bark);
+      background: var(--sand);
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      animation: fadeUp 1s ease 0.6s both;
+    }
+
+    .footer p {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--bark);
+      opacity: 0.4;
+    }
+
+    /* ── KEYFRAMES ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── MODAL (booking placeholder) ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(40,30,20,0.55);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--cream);
+      border-radius: 6px;
+      padding: 40px 32px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid var(--sand);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      animation: fadeUp 0.35s ease;
+    }
+
+    .modal h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--earth);
+      margin-bottom: 8px;
+    }
+
+    .modal p {
+      font-size: 0.82rem;
+      color: var(--bark);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 18px;
+      background: none; border: none;
+      font-size: 1.2rem; cursor: pointer;
+      color: var(--bark); opacity: 0.5;
+    }
+    .modal-close:hover { opacity: 1; }
+
+    .modal { position: relative; }
+
+    .modal-link {
+      display: inline-block;
+      padding: 13px 28px;
+      background: var(--gold);
+      color: var(--cream);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .modal-link:hover { background: var(--gold-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 400px) {
+      .name { font-size: 2rem; }
+      .page { padding: 40px 18px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="avatar-ring">
+      <!-- Replace .avatar-initials with <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%"> -->
+      <span class="avatar-initials">AF</span>
+    </div>
+    <h1 class="name">
+      April Fields
+      <span>Veteran · Entrepreneur · Creator</span>
+    </h1>
+    <p class="tagline">Fort Mitchell, AL &nbsp;·&nbsp; Building with purpose</p>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider"><span class="divider-icon">✦</span></div>
+
+  <!-- BOOKING / SERVICES -->
+  <p class="section-label">Services & Bookings</p>
+  <div class="btn-group">
+    <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn btn-primary">
+      <span class="btn-icon">📅</span>
+      <span class="btn-label">Book a Consultation</span>
+      <span class="btn-arrow">→</span>
+    </a>
+    <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn btn-secondary">
+      <span class="btn-icon">💼</span>
+      <span class="btn-label">Work With Me</span>
+      <span class="btn-arrow">→</span>
+    </a>
+    <button onclick="document.getElementById('contactModal').classList.add('open')" class="btn btn-ghost">
+      <span class="btn-icon">✉️</span>
+      <span class="btn-label">Send an Inquiry</span>
+      <span class="btn-arrow">→</span>
+    </button>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider" style="margin: 32px 0 24px;"><span class="divider-icon">✦</span></div>
+
+  <!-- SOCIAL -->
+  <p class="section-label">Connect</p>
+  <div class="social-row">
+    <a href="https://instagram.com/YOUR-HANDLE" target="_blank" class="social-pill">
+      <span class="social-icon">📸</span> Instagram
+    </a>
+    <a href="https://facebook.com/YOUR-PAGE" target="_blank" class="social-pill">
+      <span class="social-icon">📘</span> Facebook
+    </a>
+    <a href="https://tiktok.com/@YOUR-HANDLE" target="_blank" class="social-pill">
+      <span class="social-icon">🎵</span> TikTok
+    </a>
+    <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" class="social-pill">
+      <span class="social-icon">💼</span> LinkedIn
+    </a>
+    <a href="https://youtube.com/@YOUR-CHANNEL" target="_blank" class="social-pill">
+      <span class="social-icon">▶️</span> YouTube
+    </a>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider" style="margin: 32px 0 24px;"><span class="divider-icon">✦</span></div>
+
+  <!-- PAYMENTS -->
+  <p class="section-label">Send Payment</p>
+  <div class="pay-row">
+    <a href="https://cash.app/$YOUR-CASHTAG" target="_blank" class="pay-btn">
+      💵 Cash App
+    </a>
+    <a href="https://paypal.me/YOUR-HANDLE" target="_blank" class="pay-btn">
+      🅿️ PayPal
+    </a>
+    <a href="https://venmo.com/YOUR-HANDLE" target="_blank" class="pay-btn">
+      💙 Venmo
+    </a>
+    <a href="https://www.zellepay.com" target="_blank" class="pay-btn">
+      ⚡ Zelle
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>© 2026 April Fields &nbsp;·&nbsp; All rights reserved</p>
+  </div>
+
+</div>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">✕</button>
+    <h3>Get in Touch</h3>
+    <p>For inquiries, collaborations, or general questions — reach out directly via email.</p>
+    <!-- Replace with your actual email -->
+    <a href="mailto:your@email.com" class="modal-link">Send Email</a>
+  </div>
+</div>
+
+</body>
+</html>
