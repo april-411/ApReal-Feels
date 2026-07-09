@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fields of Freedom — Daily Post</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=EB+Garamond:ital@0;1&family=Jost:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:      #0f0c0a;
+    --umber:    #2a1d13;
+    --gold:     #c9a15f;
+    --gold-lt:  #ecd6a3;
+    --cream:    #f4ead9;
+    --bronze:   #a8875c;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  body{
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+  }
+
+  /* ===================== THE POST — 1080 x 1350 (IG portrait) ===================== */
+  .post{
+    position:relative;
+    width:1080px;
+    height:1350px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 700px at 50% -10%, #1c130c 0%, var(--ink) 55%, #060504 100%);
+    font-family:'EB Garamond', serif;
+    color:var(--cream);
+  }
+
+  /* faint grain */
+  .post::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+
+  /* ---- signature element: horizon of gold contour "field" lines, sky above ---- */
+  .field-lines{
+    position:absolute;
+    left:-10%; right:-10%; bottom:-4%;
+    height:46%;
+    pointer-events:none;
+  }
+  .field-lines svg{ width:100%; height:100%; display:block; }
+
+  /* small constellation mark, upper right — nods to astrology without being literal */
+  .mark{
+    position:absolute;
+    top:86px; right:96px;
+    width:140px; height:140px;
+    opacity:0.85;
+  }
+
+  /* ===================== CONTENT ===================== */
+  .content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    padding:96px 96px 84px;
+  }
+
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    font-size:15px;
+    font-weight:500;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--bronze);
+  }
+
+  .date{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:104px;
+    line-height:1;
+    color:var(--gold-lt);
+    margin-top:22px;
+    letter-spacing:0.01em;
+  }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-top:34px;
+  }
+  .divider .line{ height:1px; width:64px; background:var(--gold); opacity:0.6; }
+  .divider .credit{
+    font-family:'Jost', sans-serif;
+    font-size:14px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--bronze);
+  }
+
+  .message{
+    margin-top:64px;
+    max-width:850px;
+    font-family:'EB Garamond', serif;
+    font-weight:400;
+    font-size:37px;
+    line-height:1.5;
+    color:var(--cream);
+  }
+  .message em{
+    font-style:italic;
+    color:var(--gold-lt);
+  }
+
+  .spacer{ flex:1; }
+
+  /* ---- footer / wordmark ---- */
+  .footer{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+  }
+
+  .wordmark{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:30px;
+    color:var(--gold-lt);
+    letter-spacing:0.02em;
+  }
+  .wordmark span{
+    display:block;
+    font-family:'Jost', sans-serif;
+    font-style:normal;
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-top:6px;
+  }
+
+  .handle{
+    font-family:'Jost', sans-serif;
+    font-size:15px;
+    letter-spacing:0.08em;
+    color:var(--bronze);
+    text-align:right;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="post">
+
+  <!-- signature element 1: constellation mark -->
+  <svg class="mark" viewBox="0 0 140 140">
+    <g fill="none" stroke="#c9a15f" stroke-width="1.4" opacity="0.9">
+      <line x1="20" y1="100" x2="60" y2="40"/>
+      <line x1="60" y1="40" x2="112" y2="58"/>
+      <line x1="60" y1="40" x2="88" y2="112"/>
+      <line x1="20" y1="100" x2="88" y2="112"/>
+    </g>
+    <g fill="#ecd6a3">
+      <circle cx="20" cy="100" r="3.5"/>
+      <circle cx="60" cy="40" r="4.5"/>
+      <circle cx="112" cy="58" r="3"/>
+      <circle cx="88" cy="112" r="3"/>
+    </g>
+  </svg>
+
+  <!-- signature element 2: field horizon lines -->
+  <div class="field-lines">
+    <svg viewBox="0 0 1200 560" preserveAspectRatio="none">
+      <path d="M0,520 C250,470 950,560 1200,500" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.15"/>
+      <path d="M0,460 C300,410 900,500 1200,430" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.20"/>
+      <path d="M0,400 C280,350 920,440 1200,370" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.26"/>
+      <path d="M0,340 C260,295 940,380 1200,310" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.32"/>
+      <path d="M0,280 C300,235 900,320 1200,250" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.20"/>
+      <path d="M0,220 C260,180 940,255 1200,190" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.12"/>
+    </svg>
+  </div>
+
+  <div class="content">
+
+    <!-- ===== EDIT: small eyebrow line above the date ===== -->
+    <div class="eyebrow">A Daily Reflection</div>
+
+    <!-- ===== EDIT: the date ===== -->
+    <div class="date">July 9th, 2026</div>
+
+    <div class="divider">
+      <div class="line"></div>
+      <!-- ===== EDIT: your name / handle credit ===== -->
+      <div class="credit">~ April Peralta &nbsp;&middot;&nbsp; @sheshall_bpraisednfit</div>
+    </div>
+
+    <!-- ===== EDIT: today's message. Wrap a phrase in <em>...</em> to highlight it in gold. ===== -->
+    <div class="message">
+      Healing isn't a straight line, and it was never supposed to be. Some days you'll feel
+      the ground firm beneath you, and other days you'll feel like you're starting over.
+      Both are proof you're still moving. <em>You don't have to have it all figured out
+      to keep walking toward the life you're building.</em> Trust what you know. Trust what
+      you feel. That's enough for today.
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="footer">
+      <div class="wordmark">
+        Fields of Freedom
+        <span>Feels &middot; The Memoir &amp; Mentorship</span>
+      </div>
+      <div class="handle">aperaltruth@gmail.com</div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
