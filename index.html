@@ -760,6 +760,7 @@ const SITE = {
   bookingUrl: "https://calendly.com/fieldsoffreedom/30min",
   instagramUrl: "https://www.instagram.com/sheshall_bpraisednfit",
   tiktokUrl: "https://www.tiktok.com/@aprealfeels",
+  youtubeUrl: "https://youtube.com/@aprealfeelstruth",
   email: "aperaltruth@gmail.com"
 };
 
@@ -767,7 +768,7 @@ const MENTORSHIP = {
   title: "1:1 Mentorship — 6 Weeks",
   price: "$2,000",
   priceNote: "per slot",
-  subtitle: "Limited slots. Six weeks. Direct access to April — built entirely around where you are and where you're headed.",
+  subtitle: "Five slots. Six weeks. Direct access to April — built entirely around where you are and where you're headed.",
   slotsAvailable: 5,
   features: [
     "<strong>Weekly 1:1 sessions</strong> with April — six weeks, one focused hour each",
@@ -1125,6 +1126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fl.innerHTML = `
     <a href="${SITE.instagramUrl}" target="_blank">Instagram</a>
     <a href="${SITE.tiktokUrl}" target="_blank">TikTok</a>
+    <a href="${SITE.youtubeUrl}" target="_blank">YouTube</a>
     <a href="${SITE.hubUrl}">Hub</a>
     <a href="mailto:${SITE.email}">Email</a>
   `;
@@ -1152,7 +1154,7 @@ function renderMentorship() {
       </ul>
       <div class="mentorship-footer">
         <span class="mentorship-slots"><strong>${m.slotsAvailable}</strong> slots available</span>
-        <a href="${SITE.bookingUrl}" target="_blank" class="mentorship-cta">Apply / Book a Call</a>
+        <a href="mailto:aperaltruth@gmail.com?subject=Mentorship%20Application" class="mentorship-cta">Apply / Book a Call</a>
       </div>
     </div>
   `;
