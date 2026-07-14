@@ -23,7 +23,6 @@
     width:100%;
   }
 
-  /* ===================== THE POST — fills phone width, 4:5 ratio ===================== */
   .post{
     position:relative;
     width:100vw;
@@ -35,7 +34,6 @@
     color:var(--cream);
   }
 
-  /* faint grain */
   .post::after{
     content:"";
     position:absolute; inset:0;
@@ -44,7 +42,6 @@
     pointer-events:none;
   }
 
-  /* ---- signature element: horizon of gold contour "field" lines, sky above ---- */
   .field-lines{
     position:absolute;
     left:-10%; right:-10%; bottom:-4%;
@@ -53,7 +50,6 @@
   }
   .field-lines svg{ width:100%; height:100%; display:block; }
 
-  /* small constellation mark, upper right */
   .mark{
     position:absolute;
     top:6.4vw; right:7.4vw;
@@ -61,7 +57,6 @@
     opacity:0.85;
   }
 
-  /* ===================== CONTENT ===================== */
   .content{
     position:relative;
     z-index:2;
@@ -122,7 +117,6 @@
 
   .spacer{ flex:1; }
 
-  /* ---- footer / wordmark ---- */
   .footer{
     position:relative;
     z-index:2;
@@ -154,7 +148,6 @@
 
 <div class="post">
 
-  <!-- signature element 1: constellation mark -->
   <svg class="mark" viewBox="0 0 140 140">
     <g fill="none" stroke="#c9a15f" stroke-width="1.4" opacity="0.9">
       <line x1="20" y1="100" x2="60" y2="40"/>
@@ -170,7 +163,6 @@
     </g>
   </svg>
 
-  <!-- signature element 2: field horizon lines -->
   <div class="field-lines">
     <svg viewBox="0 0 1200 560" preserveAspectRatio="none">
       <path d="M0,520 C250,470 950,560 1200,500" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.15"/>
@@ -185,10 +177,10 @@
   <div class="content">
 
     <!-- ===== EDIT: small eyebrow line above the date ===== -->
-    <div class="eyebrow">A Daily Reflection</div>
+    <div class="eyebrow">New Moon in Cancer &middot; A Daily Reflection</div>
 
     <!-- ===== EDIT: the date ===== -->
-    <div class="date">July 13th, 2026</div>
+    <div class="date">July 14th, 2026</div>
 
     <div class="divider">
       <div class="line"></div>
@@ -196,11 +188,16 @@
       <div class="credit">Fields of Freedom Blog &middot; Ap'Real Feels</div>
     </div>
 
-    <!-- ===== EDIT: today's message. Wrap a phrase in <em>...</em> to highlight it in gold. ===== -->
+    <!-- ===== EDIT: today's message ===== -->
     <div class="message">
-      All of your experiences, actions, & circumstances of your life are but the reflection & reaction to your own thoughts. <em> It is foolish to believe in something that can hurt or harm you. The story to tell yourself matters the most </em> .
-      </div>
+      None of what you're carrying started with you.<br>
+      Fear. Anxiety. Rivalry — inherited.<br>
+      <em>But Growing &amp; Healing — chosen.</em><br>
+      Tonight, plant something new.
+    </div>
+
     <div class="spacer"></div>
+
     <div class="footer">
       <div class="wordmark">
         <span>Feels &middot; The Memoir &amp; Mentorship</span>
