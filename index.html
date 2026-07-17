@@ -7,7 +7,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
 
   <style>
-  /* ─────────────────────────────────────────
+
+    .modal-video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 28px;
+  background: var(--surface);
+}
+.modal-video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+    /* ─────────────────────────────────────────
      EDIT YOUR POSTS IN THE <script> SECTION
      BELOW — NOT HERE
   ───────────────────────────────────────── */
@@ -1262,7 +1279,16 @@ function openModal(id) {
   document.getElementById('modal-tag').innerHTML = `<span class="card-tag">${post.tag}</span>`;
   document.getElementById('modal-title').textContent = post.title;
   document.getElementById('modal-date').textContent = post.date;
-  document.getElementById('modal-body').innerHTML = post.body.map(p => `<p>${p}</p>`).join('');
+
+  const videoHtml = post.video
+    ? `<div class="modal-video-wrap">
+         <iframe src="${post.video}" title="${post.title}"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+           allowfullscreen></iframe>
+       </div>`
+    : '';
+
+  document.getElementById('modal-body').innerHTML = videoHtml + post.body.map(p => `<p>${p}</p>`).join('');
   document.getElementById('modal-book-source').textContent = post.tag;
   document.getElementById('postModal').classList.add('open');
   document.body.style.overflow = 'hidden';
