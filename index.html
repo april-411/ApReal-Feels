@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fields of Freedom · LLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
   <style>
 
@@ -148,19 +148,20 @@
 
   .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3.2rem, 10vw, 5.6rem);
+    font-size: clamp(1.9rem, 6.2vw, 3.6rem);
     font-weight: 900;
-    line-height: 0.95;
+    line-height: 1.05;
     color: var(--white);
-    letter-spacing: -2px;
+    letter-spacing: -1px;
+    white-space: nowrap;
   }
 
   .hero-title .drop {
     display: inline-block;
-    font-size: clamp(4.5rem, 14vw, 8rem);
+    font-size: 1.15em;
     line-height: 0.85;
     color: var(--gold);
-    margin-right: 2px;
+    margin-right: 1px;
     text-shadow: 0 0 80px rgba(200,145,31,0.3);
   }
 
@@ -581,6 +582,82 @@
   }
   .mentorship-cta:hover { background: var(--gold-hi); }
 
+  /* ── METHOD SNAPSHOT SECTION ── */
+  .method-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--gold);
+    border-radius: 3px;
+    padding: 36px;
+    margin-bottom: 56px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    animation: fadeUp 0.9s ease 0.3s both;
+    display: block;
+    text-decoration: none;
+  }
+  .method-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold-lo);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .method-eyebrow {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .method-eyebrow::before { content: '✦'; font-size: 0.55rem; }
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+  .method-stage { text-align: center; }
+  .method-mark {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: var(--surface);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--gold);
+  }
+  .method-stage h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+    line-height: 1.25;
+  }
+  .method-stage p {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .method-cta {
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    transition: letter-spacing 0.2s;
+  }
+  .method-card:hover .method-cta { letter-spacing: 3px; }
+  @media (max-width: 600px) {
+    .method-grid { grid-template-columns: repeat(2, 1fr); row-gap: 26px; }
+  }
+
   /* ── READ MORE BTN ── */
   .load-more {
     display: block;
@@ -807,12 +884,6 @@ const BOOKS = [
     status: "In the Making",
     description: "Another story is taking shape. Stay close — this one is still finding its voice.",
     comingSoon: true
-  },
-  {
-    title: "Coming Soon",
-    status: "In the Making",
-    description: "Every great author has more than one thing to say. April's library is only beginning.",
-    comingSoon: true
   }
 ];
 const POSTS = [
@@ -1033,8 +1104,10 @@ const POSTS = [
   <div class="nav-links">
     <a href="#writings" class="hide-mobile">Writing</a>
     <a href="#about" class="hide-mobile">About</a>
+    <a href="#method" class="hide-mobile">The Method</a>
     <a href="#books" class="hide-mobile">Books</a>
     <a href="#mentorship" class="hide-mobile">Mentorship</a>
+    <a href="purpose-finder_1.html">Purpose Quiz</a>
     <a href="#" id="nav-hub-link">Hub</a>
     <a href="#" id="nav-book-link" class="nav-cta">Book a Call</a>
   </div>
@@ -1045,9 +1118,9 @@ const POSTS = [
   <div class="hero-top-rule"></div>
   <span class="hero-eyebrow">The Official Page of</span>
   <h1 class="hero-title">
-    <span class="drop">F</span>ields of <em>Freedom, LLC </em>
+    <span class="drop">F</span>ields of <em>Freedom, LLC</em>
   </h1>
-  <p class="hero-sub">Stories of service, healing, legacy, and becoming. Written from the fields that shaped one woman's truth.</p>
+  <p class="hero-sub">Helping others find their footing, own their story, and walk boldly into whatever comes next.</p>
   <span class="hero-author">April Fields</span>
 </section>
 
@@ -1093,6 +1166,56 @@ const POSTS = [
         <div style="text-align:center; padding:16px 20px; background:var(--surface); border:1px solid var(--border); border-radius:3px; flex:1; min-width:90px;"><div style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:var(--gold);">2</div><div style="font-size:0.58rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-top:5px;">Daughters</div></div>
       </div>
     </div>
+  </div>
+
+  <!-- METHOD SNAPSHOT -->
+  <div id="method" style="scroll-margin-top:70px">
+    <div class="section-header">
+      <h2>The Method</h2>
+    </div>
+    <a class="method-card" href="Fields_of_Freedom_Framework_Overview.html" target="_blank" rel="noopener">
+      <div class="method-eyebrow">The Fields of Freedom Method</div>
+      <div class="method-grid">
+        <div class="method-stage">
+          <div class="method-mark">I</div>
+          <h4>Declare It Possible</h4>
+          <p>Plant the Seed</p>
+        </div>
+        <div class="method-stage">
+          <div class="method-mark">II</div>
+          <h4>Clear the Field</h4>
+          <p>Release the Old Story</p>
+        </div>
+        <div class="method-stage">
+          <div class="method-mark">III</div>
+          <h4>Cultivate the Ground</h4>
+          <p>Build the New Belief</p>
+        </div>
+        <div class="method-stage">
+          <div class="method-mark">IV</div>
+          <h4>Harvest the Freedom</h4>
+          <p>Embody &amp; Sustain</p>
+        </div>
+      </div>
+      <div class="method-cta">View the Full Six-Week Framework →</div>
+    </a>
+  </div>
+
+  <!-- PURPOSE QUIZ -->
+  <div id="quiz" style="scroll-margin-top:70px">
+    <div class="section-header">
+      <h2>Find Your Purpose</h2>
+    </div>
+    <a href="purpose-finder_1.html" style="text-decoration:none; display:block;">
+      <div class="featured-card" style="text-align:center;">
+        <div class="featured-label" style="justify-content:center;">Free Quiz</div>
+        <h3>Which Stage of the Method Do You Lead From?</h3>
+        <p class="excerpt">Ten short questions on your skills, your passions, and what people already trust you for. Find your Purpose Field — Builder, Connector, Guardian, or Visionary — in under two minutes.</p>
+        <div class="card-meta" style="justify-content:center;">
+          <span class="card-read" style="margin-left:0;">Take the Quiz →</span>
+        </div>
+      </div>
+    </a>
   </div>
 
   <!-- MENTORSHIP -->
