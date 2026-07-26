@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fields of Freedom — Six Week Framework</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --black:#0a0a0a;
+    --black2:#141210;
+    --gold:#c9a227;
+    --gold-deep:#9c7a1f;
+    --cream:#f2ead9;
+    --cream-dim:#cfc4a8;
+    --line:#4a3f28;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:#2a2a2a;}
+  body{
+    display:flex; justify-content:center; padding:36px 12px;
+    font-family:'EB Garamond', serif;
+  }
+  .page{
+    width:850px; min-height:1100px;
+    background:
+      radial-gradient(ellipse at 15% 8%, rgba(201,162,39,0.10), transparent 42%),
+      radial-gradient(ellipse at 88% 92%, rgba(201,162,39,0.08), transparent 45%),
+      var(--black);
+    color:var(--cream);
+    position:relative;
+    padding:64px 66px 50px;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .page::before{
+    content:"";
+    position:absolute; inset:22px;
+    border:1px solid rgba(201,162,39,0.35);
+    pointer-events:none;
+  }
+
+  /* contour field lines, faint, bottom of page */
+  .contours{position:absolute; left:0; right:0; bottom:0; height:220px; opacity:0.18; pointer-events:none;}
+  .contours svg{width:100%; height:100%;}
+
+  .eyebrow{
+    text-align:center; font-family:'EB Garamond',serif; font-size:11.5px;
+    letter-spacing:5px; text-transform:uppercase; color:var(--gold);
+    display:flex; align-items:center; justify-content:center; gap:14px;
+  }
+  .eyebrow .rule{height:1px; width:60px; background:linear-gradient(90deg, transparent, var(--gold-deep));}
+  .eyebrow .rule.flip{background:linear-gradient(270deg, transparent, var(--gold-deep));}
+
+  .wordmark{
+    text-align:center; margin-top:14px; margin-bottom:6px;
+    font-family:'Playfair Display', serif; font-weight:600; font-size:15px;
+    letter-spacing:3px; color:var(--cream-dim);
+  }
+  .wordmark b{color:var(--gold); font-weight:700; font-style:italic;}
+
+  .title{
+    text-align:center; margin-top:30px;
+    font-family:'Playfair Display', serif; font-weight:600; font-style:italic;
+    font-size:40px; line-height:1.28; color:var(--cream);
+    max-width:620px; margin-left:auto; margin-right:auto;
+  }
+  .title em{color:var(--gold); font-style:italic;}
+
+  .sub{
+    text-align:center; margin-top:16px; font-size:16px; color:var(--cream-dim);
+    max-width:520px; margin-left:auto; margin-right:auto; line-height:1.6;
+  }
+
+  .divider{
+    margin:38px auto 34px; width:120px; height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .section-label{
+    text-align:center; font-family:'EB Garamond',serif; font-size:11px;
+    letter-spacing:4px; text-transform:uppercase; color:var(--gold-deep);
+    margin-bottom:28px;
+  }
+
+  /* Growth path — 4 steps */
+  .path{
+    position:relative; display:flex; justify-content:space-between;
+    padding:0 6px; margin-bottom:8px;
+  }
+  .path::before{
+    content:"";
+    position:absolute; top:17px; left:6%; right:6%; height:1px;
+    background:repeating-linear-gradient(90deg, var(--gold-deep) 0, var(--gold-deep) 6px, transparent 6px, transparent 12px);
+    opacity:0.65;
+  }
+  .stage{ width:23.5%; text-align:center; position:relative; }
+  .stage .mark{
+    width:34px; height:34px; border-radius:50%;
+    border:1px solid var(--gold); background:var(--black2);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px; position:relative; z-index:2;
+    font-family:'Playfair Display', serif; font-style:italic; font-size:15px; color:var(--gold);
+  }
+  .stage h3{
+    font-family:'Playfair Display', serif; font-weight:600; font-size:17px;
+    color:var(--cream); margin-bottom:6px; letter-spacing:0.2px;
+  }
+  .stage .tag{
+    font-size:12px; font-style:italic; color:var(--gold-deep); margin-bottom:10px;
+  }
+  .stage p{ font-size:12.5px; color:var(--cream-dim); line-height:1.55; padding:0 4px; }
+
+  /* six week timeline */
+  .weeks{margin-top:52px;}
+  .week-row{
+    display:grid; grid-template-columns:74px 1fr 2.3fr;
+    align-items:center; padding:13px 0;
+    border-bottom:1px solid rgba(201,162,39,0.16);
+  }
+  .week-row:first-child{border-top:1px solid rgba(201,162,39,0.16);}
+  .wk{
+    font-family:'Playfair Display', serif; font-style:italic; font-weight:600;
+    color:var(--gold); font-size:15px;
+  }
+  .wk-stage{
+    font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--cream-dim);
+  }
+  .wk-desc{ font-size:14px; color:var(--cream); }
+
+  .footer{
+    margin-top:46px; text-align:center;
+  }
+  .footer .cta{
+    font-family:'Playfair Display', serif; font-style:italic; font-size:19px; color:var(--cream);
+  }
+  .footer .link{
+    margin-top:10px; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--gold);
+  }
+  .footer .name{
+    margin-top:26px; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--cream-dim);
+    display:flex; align-items:center; justify-content:center; gap:12px;
+  }
+  .footer .name .r{height:1px; width:34px; background:var(--gold-deep);}
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <a href="index.html" style="display:inline-block; margin-bottom:18px; font-family:'EB Garamond',serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--cream-dim); text-decoration:none;">← Back to Fields of Freedom</a>
+
+    <div class="eyebrow"><span class="rule"></span> A Six Week Journey <span class="rule flip"></span></div>
+    <div class="wordmark">FIELDS OF <b>FREEDOM</b></div>
+
+    <div class="title">What grows<br>when you stop waiting for <em>permission</em></div>
+    <div class="sub">A guided framework for declaring what's possible, releasing what isn't yours, and building the belief system that gets you there — one season with April.</div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">The Fields of Freedom Method</div>
+    <div class="path">
+      <div class="stage">
+        <div class="mark">I</div>
+        <h3>Declare It Possible</h3>
+        <div class="tag">Plant the Seed</div>
+        <p>Name the belief or life you're claiming — out loud, before you feel ready.</p>
+      </div>
+      <div class="stage">
+        <div class="mark">II</div>
+        <h3>Clear the Field</h3>
+        <div class="tag">Release the Old Story</div>
+        <p>Identify the inherited beliefs and patterns taking up space that was never yours to protect.</p>
+      </div>
+      <div class="stage">
+        <div class="mark">III</div>
+        <h3>Cultivate the Ground</h3>
+        <div class="tag">Build the New Belief</div>
+        <p>Install new thought patterns and daily practice until belief becomes identity.</p>
+      </div>
+      <div class="stage">
+        <div class="mark">IV</div>
+        <h3>Harvest the Freedom</h3>
+        <div class="tag">Embody &amp; Sustain</div>
+        <p>Live from the new belief without needing a program to hold it for you.</p>
+      </div>
+    </div>
+
+    <div class="weeks">
+      <div class="section-label" style="margin-top:14px;">What to Expect, Week by Week</div>
+      <div class="week-row">
+        <div class="wk">Wk 1</div>
+        <div class="wk-stage">Declare</div>
+        <div class="wk-desc">Vision work and your declaration — the belief we're building the next five weeks around.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk">Wk 2</div>
+        <div class="wk-stage">Clear</div>
+        <div class="wk-desc">Naming the inherited story — where the limiting belief actually came from.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk">Wk 3</div>
+        <div class="wk-stage">Clear</div>
+        <div class="wk-desc">Release work — forgiveness, boundaries, and letting the old ground rest.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk">Wk 4</div>
+        <div class="wk-stage">Cultivate</div>
+        <div class="wk-desc">Installing the new belief — daily practice and language that reinforces it.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk">Wk 5</div>
+        <div class="wk-stage">Cultivate</div>
+        <div class="wk-desc">Action and accountability — putting the new belief under real-world pressure.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk">Wk 6</div>
+        <div class="wk-stage">Harvest</div>
+        <div class="wk-desc">Integration and celebration — and a plan for tending this on your own.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="cta">Ready to plant something on purpose?</div>
+      <div class="link">Book your discovery call — link in bio</div>
+      <div class="name"><span class="r"></span> APRIL FIELDS <span class="r"></span></div>
+    </div>
+
+    <div class="contours">
+      <svg viewBox="0 0 850 220" preserveAspectRatio="none">
+        <path d="M0,120 C150,90 300,150 450,110 C600,70 750,130 850,100" fill="none" stroke="#c9a227" stroke-width="1"/>
+        <path d="M0,160 C150,130 300,190 450,150 C600,110 750,170 850,140" fill="none" stroke="#c9a227" stroke-width="1"/>
+        <path d="M0,200 C150,170 300,220 450,190 C600,150 750,210 850,180" fill="none" stroke="#c9a227" stroke-width="1"/>
+      </svg>
+    </div>
+
+  </div>
+</body>
+</html>
