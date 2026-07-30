@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 <title>Find Your Purpose Field — Fields of Freedom</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
     --line: rgba(201,161,92,0.22);
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
+  html,body{margin:0;padding:0;width:100%;min-height:100%;}
   body{
     background:
       radial-gradient(ellipse 120% 60% at 50% -10%, rgba(201,161,92,0.10), transparent 60%),
@@ -288,9 +288,6 @@
 </style>
 </head>
 <body>
-<div class="stage">
-  <a href="index.html" style="display:inline-block; margin-bottom:22px; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); text-decoration:none;">← Back to Fields of Freedom</a>
-</div>
 <div class="stage" id="app"></div>
 
 <script>
