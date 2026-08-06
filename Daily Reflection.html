@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fields of Freedom — Daily Post</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=EB+Garamond:ital@0;1&family=Jost:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:      #0f0c0a;
+    --umber:    #2a1d13;
+    --gold:     #c9a15f;
+    --gold-lt:  #ecd6a3;
+    --cream:    #f4ead9;
+    --bronze:   #a8875c;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html, body{
+    background:#000;
+    width:100%;
+  }
+
+  .post{
+    position:relative;
+    width:100vw;
+    aspect-ratio:4 / 5;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, #1c130c 0%, var(--ink) 55%, #060504 100%);
+    font-family:'EB Garamond', serif;
+    color:var(--cream);
+  }
+
+  .post::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+
+  .field-lines{
+    position:absolute;
+    left:-10%; right:-10%; bottom:-4%;
+    height:46%;
+    pointer-events:none;
+  }
+  .field-lines svg{ width:100%; height:100%; display:block; }
+
+  .mark{
+    position:absolute;
+    top:4vw;
+    right:3vw;
+    width:6vw;
+    height:6vw;
+    opacity:0.85;
+    z-index:2;
+  }
+
+  .content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    padding:8.9vw 8.9vw 7.8vw;
+  }
+
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    font-size:2.6vw;
+    font-weight:500;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    padding-right:10vw;
+  }
+
+  .date{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:8.6vw;
+    line-height:1;
+    color:var(--gold-lt);
+    margin-top:2vw;
+    letter-spacing:0.01em;
+  }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:3vw;
+    margin-top:4.5vw;
+    flex-wrap:wrap;
+  }
+  .divider .line{ height:1px; width:11vw; background:var(--gold); opacity:0.6; }
+  .divider .credit{
+    font-family:'Jost', sans-serif;
+    font-size:2.3vw;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--bronze);
+  }
+
+  /* ---- message block styles ---- */
+  .message{
+    margin-top:7vw;
+    max-width:100%;
+    font-family:'EB Garamond', serif;
+    font-weight:400;
+    font-size:4.5vw;
+    line-height:1.55;
+    color:var(--cream);
+  }
+  .message .title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:5.6vw;
+    color:var(--gold-lt);
+    margin-bottom:1.5vw;
+  }
+  .message .subtitle{
+    font-size:4vw;
+    color:var(--cream);
+    margin-bottom:4vw;
+  }
+  .message .subtitle strong{
+    color:var(--gold);
+    font-weight:600;
+  }
+  .message p{
+    margin-bottom:4vw;
+  }
+  .message .quote{
+    font-style:italic;
+    color:var(--gold-lt);
+    font-size:4.7vw;
+    line-height:1.5;
+    margin-bottom:4vw;
+  }
+  .message em{
+    font-style:italic;
+    color:var(--gold-lt);
+  }
+
+  .spacer{ flex:1; }
+
+  /* ---- footer / gold sign-off at the bottom ---- */
+  .footer{
+    position:relative;
+    z-index:2;
+  }
+  .gold-line{
+    height:1px;
+    width:100%;
+    background:linear-gradient(90deg, var(--gold) 0%, transparent 80%);
+    opacity:0.5;
+    margin-bottom:3vw;
+  }
+  .wordmark{
+    font-family:'Jost', sans-serif;
+    font-weight:500;
+    font-size:1.9vw;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .footer-tag{
+    font-family:'Jost', sans-serif;
+    font-weight:500;
+    font-size:1.9vw;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-top:1vw;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="post">
+
+  <svg class="mark" viewBox="0 0 140 140">
+    <g fill="none" stroke="#c9a15f" stroke-width="1.4" opacity="0.9">
+      <line x1="20" y1="100" x2="60" y2="40"/>
+      <line x1="60" y1="40" x2="112" y2="58"/>
+      <line x1="60" y1="40" x2="88" y2="112"/>
+      <line x1="20" y1="100" x2="88" y2="112"/>
+    </g>
+    <g fill="#ecd6a3">
+      <circle cx="20" cy="100" r="3.5"/>
+      <circle cx="60" cy="40" r="4.5"/>
+      <circle cx="112" cy="58" r="3"/>
+      <circle cx="88" cy="112" r="3"/>
+    </g>
+  </svg>
+
+  <div class="field-lines">
+    <svg viewBox="0 0 1200 560" preserveAspectRatio="none">
+      <path d="M0,520 C250,470 950,560 1200,500" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.15"/>
+      <path d="M0,460 C300,410 900,500 1200,430" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.20"/>
+      <path d="M0,400 C280,350 920,440 1200,370" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.26"/>
+      <path d="M0,340 C260,295 940,380 1200,310" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.32"/>
+      <path d="M0,280 C300,235 900,320 1200,250" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.20"/>
+      <path d="M0,220 C260,180 940,255 1200,190" stroke="#c9a15f" stroke-width="1" fill="none" opacity="0.12"/>
+    </svg>
+  </div>
+
+  <div class="content">
+
+    <div class="eyebrow">&middot; Daily Reflection</div>
+
+    <!-- ================================================ -->
+    <!--  ⬇ PASTE THE ENTIRE DAILY POST HERE — ONE BLOCK ⬇ -->
+    <!-- ================================================ -->
+
+    <div class="date">August 6th, 2026</div>
+
+    <div class="divider">
+      <div class="line"></div>
+      <div class="credit">Fields of Freedom &middot; Ap'Real Feels</div>
+    </div>
+
+    <div class="message">
+      <div class="title">Cultivate Your Ground</div>
+      <div class="subtitle">Growth Term: <strong>Accountability</strong></div>
+      <p>True growth lives in the unglamorous reps nobody sees.</p>
+      <div class="quote">Accountability is the unglamorous work nobody claps for. It is the promise you keep to yourself before you keep it to anyone else. </div>
+      <p>What's the daily rep that's quietly building your growth marathon, or is it quietly costing you it?</p>
+    </div>
+
+    <!-- ================================================ -->
+    <!--  ⬆ END OF DAILY POST BLOCK ⬆                      -->
+    <!-- ================================================ -->
+
+    <div class="spacer"></div>
+
+    <div class="footer">
+      <div class="gold-line"></div>
+      <div class="wordmark">Fields of Freedom &middot; Ap'Real Feels</div>
+      <div class="footer-tag">Feels &middot; The Memoir &amp; Mentorship</div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
