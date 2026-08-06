@@ -51,13 +51,13 @@
   .field-lines svg{ width:100%; height:100%; display:block; }
 
   .mark{
-  position:absolute;
-  top:4vw;
-  right:3vw;
-  width:6vw;
-  height:6vw;
-  opacity:0.85;
-  z-index:2;
+    position:absolute;
+    top:4vw;
+    right:3vw;
+    width:6vw;
+    height:6vw;
+    opacity:0.85;
+    z-index:2;
   }
 
   .content{
@@ -70,15 +70,14 @@
   }
 
   .eyebrow{
-  font-family:'Jost', sans-serif;
-  font-size:2.6vw;
-  font-weight:500;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:var(--bronze);
-
-  padding-right:10vw;
-}
+    font-family:'Jost', sans-serif;
+    font-size:2.6vw;
+    font-weight:500;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    padding-right:10vw;
+  }
 
   .date{
     font-family:'Cormorant Garamond', serif;
@@ -106,6 +105,7 @@
     color:var(--bronze);
   }
 
+  /* ---- message block styles ---- */
   .message{
     margin-top:7vw;
     max-width:100%;
@@ -115,6 +115,32 @@
     line-height:1.55;
     color:var(--cream);
   }
+  .message .title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:5.6vw;
+    color:var(--gold-lt);
+    margin-bottom:1.5vw;
+  }
+  .message .subtitle{
+    font-size:4vw;
+    color:var(--cream);
+    margin-bottom:4vw;
+  }
+  .message .subtitle strong{
+    color:var(--gold);
+    font-weight:600;
+  }
+  .message p{
+    margin-bottom:4vw;
+  }
+  .message .quote{
+    font-style:italic;
+    color:var(--gold-lt);
+    font-size:4.7vw;
+    line-height:1.5;
+    margin-bottom:4vw;
+  }
   .message em{
     font-style:italic;
     color:var(--gold-lt);
@@ -122,29 +148,34 @@
 
   .spacer{ flex:1; }
 
+  /* ---- footer / gold sign-off at the bottom ---- */
   .footer{
     position:relative;
     z-index:2;
   }
-
-  .wordmark{
-    font-family:'Cormorant Garamond', serif;
-    font-weight:600;
-    font-style:italic;
-    font-size:3.9vw;
-    color:var(--gold-lt);
-    letter-spacing:0.02em;
+  .gold-line{
+    height:1px;
+    width:100%;
+    background:linear-gradient(90deg, var(--gold) 0%, transparent 80%);
+    opacity:0.5;
+    margin-bottom:3vw;
   }
-  .wordmark span{
-    display:block;
+  .wordmark{
     font-family:'Jost', sans-serif;
-    font-style:normal;
     font-weight:500;
-    font-size:1.7vw;
+    font-size:1.9vw;
     letter-spacing:0.22em;
     text-transform:uppercase;
-    color:var(--bronze);
-    margin-top:1.6vw;
+    color:var(--gold);
+  }
+  .footer-tag{
+    font-family:'Jost', sans-serif;
+    font-weight:500;
+    font-size:1.9vw;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-top:1vw;
   }
 
 </style>
@@ -181,61 +212,40 @@
 
   <div class="content">
 
-    <!-- ===== EDIT: small eyebrow line above the date ===== -->
-    <div class="eyebrow"> &middot; Daily Reflection</div>
+    <div class="eyebrow">&middot; Daily Reflection</div>
 
-    <!-- ===== EDIT: the date ===== -->
-    <div class="date">August 5th, 2026</div>
+    <!-- ================================================ -->
+    <!--  ⬇ PASTE THE ENTIRE DAILY POST HERE — ONE BLOCK ⬇ -->
+    <!-- ================================================ -->
+
+    <div class="date">August 6th, 2026</div>
 
     <div class="divider">
       <div class="line"></div>
-      <!-- ===== EDIT: credit line ===== -->
       <div class="credit">Fields of Freedom &middot; Ap'Real Feels</div>
     </div>
 
-    <!-- ===== EDIT: today's message ===== -->
-    <!-- ===== EDIT: Daily Reflection ===== -->
+    <div class="message">
+      <div class="title">Cultivate the Ground</div>
+      <div class="subtitle">Growth Term: <strong>Accountability</strong></div>
+      <p>True growth lives in the unglamorous reps nobody sees.</p>
+      <div class="quote">Accountability is the unglamorous scope of work nobody claps for.It is the promise you keep to yourself before you keep it to anyone else. </div>
+      <p>What's the daily rep that's quietly building your growth marathon, or is it quietly costing you it?</p>
+    </div>
 
-<div class="message">
+    <!-- ================================================ -->
+    <!--  ⬆ END OF DAILY POST BLOCK ⬆                      -->
+    <!-- ================================================ -->
 
-  <div class="title">
-    Clear the Field
+    <div class="spacer"></div>
+
+    <div class="footer">
+      <div class="gold-line"></div>
+      <div class="wordmark">Fields of Freedom &middot; Ap'Real Feels</div>
+      <div class="footer-tag">Feels &middot; The Memoir &amp; Mentorship</div>
+    </div>
+
   </div>
-
-  <div class="subtitle">
-    Leadership Term: <strong>Boundaries as Strategy</strong>
-  </div>
-
-   Every strong perimeter is intentional — built out of respect for what's inside it.
-  </p>
-
-  <div class="quote">
-    Boundaries are perimeter lines — keeping you (the mission)
-    safe from people who were never assigned to it.
-  </div>
-
-  <p>
-    Don't allow distractions to drift into your space and call it support.
-    Support strengthens your purpose!
-  </p>
-
-</div>
-
-<div class="spacer"></div>
-
-<div class="footer">
-
-  <div class="gold-line"></div>
-
-  <div class="wordmark">
-    <span>FIELDS OF FREEDOM • AP'REAL FEELS</span>
-  </div>
-
-  <div class="footer-tag">
-    FEELS • THE MEMOIR &amp; MENTORSHIP
-  </div>
-
-</div>
 
 </div>
 
