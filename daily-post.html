@@ -21,11 +21,19 @@
   html, body{
     background:#000;
     width:100%;
+    min-height:100dvh;
+  }
+
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
 
   .post{
+    container-type: inline-size;
     position:relative;
-    width:100vw;
+    width: min(100vw, 80dvh);
     aspect-ratio:4 / 5;
     overflow:hidden;
     background:
@@ -52,10 +60,10 @@
 
   .mark{
     position:absolute;
-    top:4vw;
-    right:3vw;
-    width:6vw;
-    height:6vw;
+    top:4cqw;
+    right:3cqw;
+    width:6cqw;
+    height:6cqw;
     opacity:0.85;
     z-index:2;
   }
@@ -66,80 +74,79 @@
     height:100%;
     display:flex;
     flex-direction:column;
-    padding:8.9vw 8.9vw 7.8vw;
+    padding:8.9cqw 8.9cqw 7.8cqw;
   }
 
   .eyebrow{
     font-family:'Jost', sans-serif;
-    font-size:2.6vw;
+    font-size:2.6cqw;
     font-weight:500;
     letter-spacing:0.28em;
     text-transform:uppercase;
     color:var(--bronze);
-    padding-right:10vw;
+    padding-right:10cqw;
   }
 
   .date{
     font-family:'Cormorant Garamond', serif;
     font-weight:300;
-    font-size:8.6vw;
+    font-size:8.6cqw;
     line-height:1;
     color:var(--gold-lt);
-    margin-top:2vw;
+    margin-top:2cqw;
     letter-spacing:0.01em;
   }
 
   .divider{
     display:flex;
     align-items:center;
-    gap:3vw;
-    margin-top:4.5vw;
+    gap:3cqw;
+    margin-top:4.5cqw;
     flex-wrap:wrap;
   }
-  .divider .line{ height:1px; width:11vw; background:var(--gold); opacity:0.6; }
+  .divider .line{ height:1px; width:11cqw; background:var(--gold); opacity:0.6; }
   .divider .credit{
     font-family:'Jost', sans-serif;
-    font-size:2.3vw;
+    font-size:2.3cqw;
     letter-spacing:0.16em;
     text-transform:uppercase;
     color:var(--bronze);
   }
 
-  /* ---- message block styles ---- */
   .message{
-    margin-top:7vw;
+    margin-top:7cqw;
     max-width:100%;
     font-family:'EB Garamond', serif;
     font-weight:400;
-    font-size:4.5vw;
+    font-size:4.5cqw;
     line-height:1.55;
     color:var(--cream);
   }
   .message .title{
     font-family:'Cormorant Garamond', serif;
     font-weight:600;
-    font-size:5.6vw;
+    font-size:5.6cqw;
     color:var(--gold-lt);
-    margin-bottom:1.5vw;
+    margin-bottom:1.5cqw;
   }
   .message .subtitle{
-    font-size:4vw;
+    font-size:4cqw;
     color:var(--cream);
-    margin-bottom:4vw;
+    margin-bottom:4cqw;
   }
   .message .subtitle strong{
     color:var(--gold);
     font-weight:600;
   }
   .message p{
-    margin-bottom:4vw;
+    margin-bottom:4cqw;
   }
   .message .quote{
     font-style:italic;
     color:var(--gold-lt);
-    font-size:4.7vw;
+    font-size:4.7cqw;
     line-height:1.5;
-    margin-bottom:4vw;
+    margin-bottom:4cqw;
   }
   .message em{
     font-style:italic;
@@ -148,7 +155,6 @@
 
   .spacer{ flex:1; }
 
-  /* ---- footer / gold sign-off at the bottom ---- */
   .footer{
     position:relative;
     z-index:2;
@@ -158,12 +164,12 @@
     width:100%;
     background:linear-gradient(90deg, var(--gold) 0%, transparent 80%);
     opacity:0.5;
-    margin-bottom:3vw;
+    margin-bottom:3cqw;
   }
   .wordmark{
     font-family:'Jost', sans-serif;
     font-weight:500;
-    font-size:1.9vw;
+    font-size:1.9cqw;
     letter-spacing:0.22em;
     text-transform:uppercase;
     color:var(--gold);
@@ -171,11 +177,11 @@
   .footer-tag{
     font-family:'Jost', sans-serif;
     font-weight:500;
-    font-size:1.9vw;
+    font-size:1.9cqw;
     letter-spacing:0.18em;
     text-transform:uppercase;
     color:var(--gold);
-    margin-top:1vw;
+    margin-top:1cqw;
   }
 
 </style>
@@ -214,11 +220,7 @@
 
     <div class="eyebrow">&middot; Daily Reflection</div>
 
-    <!-- ================================================ -->
-    <!--  ⬇ PASTE THE ENTIRE DAILY POST HERE — ONE BLOCK ⬇ -->
-    <!-- ================================================ -->
-
-    <div class="date">August 6th, 2026</div>
+    <div class="date">August 8th, 2026</div>
 
     <div class="divider">
       <div class="line"></div>
@@ -226,23 +228,19 @@
     </div>
 
     <div class="message">
-      <div class="title">Cultivate Your Ground</div>
-      <div class="subtitle">Growth Term: <strong>Accountability</strong></div>
-      <p>True growth lives in the unglamorous reps nobody sees.</p>
-      <div class="quote">Accountability is the unglamorous scope of work nobody claps for.It is the promise you keep to yourself before you keep it to anyone else. </div>
-      <p>What's the daily rep that's quietly building your growth marathon, or is it quietly costing you it?</p>
+      <div class="title">Harvest the Freedom</div>
+      <div class="subtitle">Growth Term: <strong>After-Action Review</strong></div>
+      <p>This self assessment is the discipline behind every breakthrough — pausing to ask what truly delivered before the next push begins.</p>
+      <div class="quote">Did you Delcare it Possible, Clear the Field, Cultivate or Harvest your own field this week?</div>
+      <p>What did this week actually prove?</p>
     </div>
-
-    <!-- ================================================ -->
-    <!--  ⬆ END OF DAILY POST BLOCK ⬆                      -->
-    <!-- ================================================ -->
 
     <div class="spacer"></div>
 
     <div class="footer">
       <div class="gold-line"></div>
       <div class="wordmark">Fields of Freedom &middot; Ap'Real Feels</div>
-      <div class="footer-tag">Feels &middot; The Memoir &amp; Mentorship</div>
+      <div class="footer-tag">Feels &middot; The Memoir &amp; Mentorship & Consulting</div>
     </div>
 
   </div>
