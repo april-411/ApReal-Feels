@@ -21,21 +21,23 @@
   html, body{
     background:#000;
     width:100%;
-    min-height:100dvh;
+    min-height:100%;
   }
 
   body{
     display:flex;
-    align-items:center;
+    align-items:flex-start;      /* was: center — top-align so growth pushes down, not off both edges */
     justify-content:center;
+    min-height:100dvh;
+    padding: 4dvh 0;             /* breathing room so the card never touches the screen edge */
   }
 
   .post{
     container-type: inline-size;
     position:relative;
-    width: min(100vw, 80dvh);
-    aspect-ratio:4 / 5;
-    overflow:hidden;
+    width: min(100vw, 640px);    /* width now drives everything; height is no longer forced */
+    /* aspect-ratio removed — height is determined by content so nothing gets clipped */
+    overflow:visible;            /* was: hidden — hidden is what was eating the footer */
     background:
       radial-gradient(ellipse 90% 60% at 50% -10%, #1c130c 0%, var(--ink) 55%, #060504 100%);
     font-family:'EB Garamond', serif;
@@ -52,9 +54,10 @@
 
   .field-lines{
     position:absolute;
-    left:-10%; right:-10%; bottom:-4%;
-    height:46%;
+    left:-10%; right:-10%; bottom:0;
+    height:46cqw;                /* fixed to container width, not a % of the (now variable) card height */
     pointer-events:none;
+    z-index:0;
   }
   .field-lines svg{ width:100%; height:100%; display:block; }
 
@@ -71,7 +74,7 @@
   .content{
     position:relative;
     z-index:2;
-    height:100%;
+    min-height:125cqw;           /* preserves the original 4:5 card feel when the quote is short */
     display:flex;
     flex-direction:column;
     padding:8.9cqw 8.9cqw 7.8cqw;
@@ -153,7 +156,7 @@
     color:var(--gold-lt);
   }
 
-  .spacer{ flex:1; }
+  .spacer{ flex:1; min-height:6cqw; }   /* small floor so footer never rides right under the text */
 
   .footer{
     position:relative;
