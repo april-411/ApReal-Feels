@@ -26,18 +26,17 @@
 
   body{
     display:flex;
-    align-items:flex-start;      /* was: center — top-align so growth pushes down, not off both edges */
+    align-items:flex-start;
     justify-content:center;
     min-height:100dvh;
-    padding: 4dvh 0;             /* breathing room so the card never touches the screen edge */
+    padding: 4dvh 0;
   }
 
   .post{
     container-type: inline-size;
     position:relative;
-    width: min(100vw, 640px);    /* width now drives everything; height is no longer forced */
-    /* aspect-ratio removed — height is determined by content so nothing gets clipped */
-    overflow:visible;            /* was: hidden — hidden is what was eating the footer */
+    width: min(100vw, 640px);
+    overflow:visible;
     background:
       radial-gradient(ellipse 90% 60% at 50% -10%, #1c130c 0%, var(--ink) 55%, #060504 100%);
     font-family:'EB Garamond', serif;
@@ -55,7 +54,7 @@
   .field-lines{
     position:absolute;
     left:-10%; right:-10%; bottom:0;
-    height:46cqw;                /* fixed to container width, not a % of the (now variable) card height */
+    height:46cqw;
     pointer-events:none;
     z-index:0;
   }
@@ -74,7 +73,7 @@
   .content{
     position:relative;
     z-index:2;
-    min-height:125cqw;           /* preserves the original 4:5 card feel when the quote is short */
+    min-height:125cqw;
     display:flex;
     flex-direction:column;
     padding:8.9cqw 8.9cqw 7.8cqw;
@@ -156,7 +155,7 @@
     color:var(--gold-lt);
   }
 
-  .spacer{ flex:1; min-height:6cqw; }   /* small floor so footer never rides right under the text */
+  .spacer{ flex:1; min-height:6cqw; }
 
   .footer{
     position:relative;
@@ -223,7 +222,7 @@
 
     <div class="eyebrow">&middot; Daily Reflection</div>
 
-    <div class="date">August 10th, 2026</div>
+    <div class="date">August 11th, 2026</div>
 
     <div class="divider">
       <div class="line"></div>
@@ -231,11 +230,11 @@
     </div>
 
     <div class="message">
-      <div class="title">Declare It Possible</div>
-      <div class="subtitle">Growth Term: <strong>Strategic Clarity</strong></div>
-      <p>The negative loop: "It's not realistic for me."</p>
-      <div class="quote"> The reframe: "That's not proven yet." Strategic clarity isn't arrogance — it's naming the vision in a way that prevents doubt from getting a vote.</div>
-      <p>"Shoot for the moon, because even if you miss, you'll land among the stars." — Mr. Les Brown</p>
+      <div class="title">Clear the Field</div>
+      <div class="subtitle">Growth Term: <strong>Command</strong></div>
+      <p>The negative loop: "Their opinion of me must mean something."</p>
+      <div class="quote"> The reframe: Command means you decide whose voice gets a vote in your own life — and most voices don't get one.</div>
+      <p>"Other people's opinion of you does not have to become your reality." — Mr. Les Brown</p>
     </div>
 
     <div class="spacer"></div>
