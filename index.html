@@ -859,18 +859,8 @@ const SITE = {
 };
 
 const MENTORSHIP = {
-  title: "1:1 Mentorship — 6 Weeks",
-  price: "$2,000",
-  priceNote: "per slot",
-  subtitle: "Five slots. Six weeks. Direct access to April — built entirely around where you are and where you're headed.",
-  slotsAvailable: 0,
-  features: [
-    "<strong>Weekly 1:1 sessions</strong> with April — six weeks, one focused hour each",
-    "<strong>Direct message access</strong> between sessions for questions, wins, and real-time support",
-    "<strong>A personalized arc</strong> — from root cause, to reframe, to a concrete plan you actually use",
-    "<strong>A tangible takeaway</strong> at the end — something written and yours to keep",
-    "<strong>Her full attention</strong> — only 5 slots open at a time, no cohort"
-  ]
+  title: "1:1 Advising",
+  subtitle: "Six weeks. Direct access to April. A guided path from where you are to where you're headed."
 };
 
 const BOOKS = [
@@ -1139,7 +1129,7 @@ const POSTS = [
     <a href="#about" class="hide-mobile">About</a>
     <a href="#method" class="hide-mobile">The Method</a>
     <a href="#books" class="hide-mobile">Books</a>
-    <a href="#advising" class="hide-mobile">Advising</a>
+    <a href="advising.html" class="hide-mobile">Advising</a>
   <a href="purpose-finder.html" class="nav-cta">Purpose Finder</a>
     <a href="#" id="nav-hub-link">Hub</a>
     <a href="#" id="nav-book-link" class="nav-cta">Book a Call</a>
@@ -1254,7 +1244,7 @@ const POSTS = [
   <!-- MENTORSHIP -->
   <div id="mentorship" style="scroll-margin-top:70px">
     <div class="section-header">
-      <h2>Mentorship</h2>
+      <h2>Advisor</h2>
     </div>
     <div id="mentorship-grid"></div>
   </div>
@@ -1328,15 +1318,10 @@ function renderMentorship() {
     <div class="mentorship-card">
       <div class="mentorship-top">
         <h3>${m.title}</h3>
-        <div class="mentorship-price">${m.price}<span>${m.priceNote}</span></div>
       </div>
       <p class="mentorship-sub">${m.subtitle}</p>
-      <ul class="mentorship-features">
-        ${m.features.map(f => `<li>${f}</li>`).join('')}
-      </ul>
-      <div class="mentorship-footer">
-        <span class="mentorship-slots"><strong>${m.slotsAvailable}</strong> slots available</span>
-        <a href="mailto:fieldsoffreedom411@gmail.com?subject=Mentorship%20Application" class="mentorship-cta">Apply / Book a Call</a>
+      <div class="mentorship-footer" style="justify-content:flex-end;">
+        <a href="advising.html" class="mentorship-cta">View Advising &amp; Pricing →</a>
       </div>
     </div>
   `;
