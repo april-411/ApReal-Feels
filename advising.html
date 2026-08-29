@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fields of Freedom — 1:1 Advising</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0908;
+    --black-2:#131110;
+    --gold:#b8963e;
+    --gold-bright:#d9b968;
+    --cream:#f4efe4;
+    --cream-dim:#cfc6b0;
+    --line:#3a3428;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--cream);
+    font-family:'EB Garamond', serif;
+    font-size:19px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  /* Field contour lines - background motif */
+  .field-lines{
+    position:absolute;
+    top:0; left:0; width:100%; height:420px;
+    overflow:hidden;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .field-lines svg{width:100%;height:100%;}
+
+  header{
+    position:relative;
+    padding:90px 0 70px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .eyebrow{
+    font-family:'EB Garamond', serif;
+    letter-spacing:0.32em;
+    font-size:12px;
+    color:var(--gold);
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:26px;
+    position:relative;
+    z-index:1;
+  }
+  .eyebrow::before, .eyebrow::after{
+    content:"";
+    width:36px;
+    height:1px;
+    background:var(--gold);
+    opacity:0.6;
+  }
+  .compass{
+    width:34px;height:34px;
+    margin:0 auto 22px;
+    position:relative;
+    z-index:1;
+  }
+  h1.title{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:44px;
+    letter-spacing:0.01em;
+    color:var(--cream);
+    position:relative;
+    z-index:1;
+  }
+  h1.title em{
+    font-style:italic;
+    color:var(--gold-bright);
+    font-weight:500;
+  }
+  .subtitle{
+    margin-top:20px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--cream-dim);
+    position:relative;
+    z-index:1;
+  }
+
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  .lede{
+    font-size:21px;
+    line-height:1.8;
+    color:var(--cream);
+  }
+  .lede + p{margin-top:22px;font-size:19px;color:var(--cream-dim);}
+
+  h2.section-title{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:34px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  h2.section-title::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  .method-steps{
+    display:grid;
+    gap:26px;
+  }
+  .method-step{
+    display:grid;
+    grid-template-columns:38px 1fr;
+    gap:18px;
+    align-items:start;
+  }
+  .method-step .mark{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:22px;
+    line-height:1.5;
+  }
+  .method-step .label{
+    font-weight:600;
+    color:var(--cream);
+  }
+  .method-step .desc{
+    color:var(--cream-dim);
+    font-size:17px;
+  }
+
+  ul.included{list-style:none;}
+  ul.included li{
+    position:relative;
+    padding-left:30px;
+    margin-bottom:18px;
+    color:var(--cream-dim);
+    font-size:18px;
+  }
+  ul.included li::before{
+    content:"✦";
+    position:absolute;
+    left:0;
+    top:2px;
+    color:var(--gold);
+    font-size:14px;
+  }
+  ul.included li strong{color:var(--cream);font-weight:600;}
+
+  .who{
+    font-size:19px;
+    color:var(--cream-dim);
+  }
+  .who strong{color:var(--cream);}
+
+  /* Pricing table */
+  .price-head{
+    text-align:center;
+    margin-bottom:44px;
+  }
+  .price-head .amount{
+    font-family:'Playfair Display', serif;
+    font-size:56px;
+    color:var(--gold-bright);
+    font-weight:600;
+  }
+  .price-head .amount sup{
+    font-size:22px;
+    top:-24px;
+    color:var(--gold);
+  }
+  .price-head .caption{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--cream-dim);
+    font-size:18px;
+    margin-top:8px;
+  }
+
+  table.plans{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'EB Garamond', serif;
+  }
+  table.plans th{
+    text-align:left;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    padding:0 0 14px;
+    border-bottom:1px solid var(--line);
+    font-weight:600;
+  }
+  table.plans td{
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+    color:var(--cream-dim);
+    font-size:17px;
+  }
+  table.plans tr:last-child td{border-bottom:none;}
+  table.plans td.plan-name{
+    color:var(--cream);
+    font-weight:600;
+    width:34%;
+  }
+  table.plans td.plan-total{
+    color:var(--gold-bright);
+    text-align:right;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .best-value{
+    display:inline-block;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--black);
+    background:var(--gold);
+    padding:2px 8px;
+    border-radius:2px;
+    margin-left:10px;
+    vertical-align:middle;
+  }
+
+  .fine-print{
+    margin-top:28px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--cream-dim);
+    opacity:0.85;
+  }
+
+  /* CTA */
+  .cta-block{
+    text-align:center;
+    padding:80px 0 90px;
+  }
+  .cta-block .capacity{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream-dim);
+    margin-bottom:34px;
+  }
+  .apply-btn{
+    display:inline-block;
+    font-family:'EB Garamond', serif;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--black);
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
+    padding:18px 48px;
+    text-decoration:none;
+    border-radius:2px;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:0 0 0 1px rgba(184,150,62,0.3);
+  }
+  .apply-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(184,150,62,0.25);
+  }
+  .review-note{
+    margin-top:22px;
+    font-size:15px;
+    color:var(--cream-dim);
+    opacity:0.8;
+  }
+
+  footer{
+    text-align:center;
+    padding:50px 0 70px;
+  }
+  .signature{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--gold);
+    letter-spacing:0.02em;
+  }
+  .footer-sub{
+    margin-top:10px;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--cream-dim);
+    opacity:0.7;
+  }
+
+  @media (max-width:600px){
+    body{font-size:17px;}
+    h1.title{font-size:32px;}
+    .subtitle{font-size:19px;}
+    .price-head .amount{font-size:44px;}
+    .method-step{grid-template-columns:30px 1fr;}
+    table.plans td, table.plans th{font-size:15px;}
+    .apply-btn{padding:16px 34px;font-size:14px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .apply-btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="field-lines">
+    <svg viewBox="0 0 800 420" preserveAspectRatio="none">
+      <path d="M0,420 Q200,340 400,380 T800,340" stroke="#b8963e" stroke-width="1" fill="none"/>
+      <path d="M0,400 Q200,310 400,350 T800,300" stroke="#b8963e" stroke-width="1" fill="none"/>
+      <path d="M0,380 Q200,280 400,320 T800,260" stroke="#b8963e" stroke-width="1" fill="none"/>
+      <path d="M0,355 Q200,250 400,285 T800,215" stroke="#b8963e" stroke-width="0.75" fill="none"/>
+      <path d="M0,325 Q200,215 400,245 T800,170" stroke="#b8963e" stroke-width="0.75" fill="none"/>
+      <path d="M0,290 Q200,180 400,205 T800,125" stroke="#b8963e" stroke-width="0.5" fill="none"/>
+      <circle cx="400" cy="80" r="2.5" fill="#d9b968"/>
+    </svg>
+  </div>
+
+  <div class="wrap">
+    <div class="eyebrow">Fields of Freedom, LLC</div>
+    <svg class="compass" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="18" stroke="#b8963e" stroke-width="1"/>
+      <path d="M20 6 L23 20 L20 34 L17 20 Z" fill="#d9b968"/>
+      <path d="M6 20 L20 17 L34 20 L20 23 Z" fill="#7a6329"/>
+    </svg>
+    <h1 class="title">1:1 <em>Advising</em></h1>
+    <p class="subtitle">A 6-week guided path through the Method — with me, not just a workbook.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="lede">You've done the work of naming what you want. Now it's time to build it — with someone who's walked the field herself and knows how to hold the line with you when it gets hard.</p>
+    <p>This is 1:1 advising built on the Fields of Freedom Method. Six weeks, one step at a time, with weekly sessions that turn reflection into a real plan.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">The Method</h2>
+    <div class="method-steps">
+      <div class="method-step">
+        <div class="mark">I.</div>
+        <div><div class="label">Declare It Possible</div><div class="desc">Name what you actually want, without apology.</div></div>
+      </div>
+      <div class="method-step">
+        <div class="mark">II.</div>
+        <div><div class="label">Clear the Field</div><div class="desc">Identify what's been blocking your growth.</div></div>
+      </div>
+      <div class="method-step">
+        <div class="mark">III.</div>
+        <div><div class="label">Cultivate the Ground</div><div class="desc">Build daily habits that hold weight.</div></div>
+      </div>
+      <div class="method-step">
+        <div class="mark">IV.</div>
+        <div><div class="label">Harvest the Freedom</div><div class="desc">Turn the work into a plan you can act on.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">What's Included</h2>
+    <ul class="included">
+      <li><strong>6 weekly 1:1 sessions</strong>, structured around each phase of the Method</li>
+      <li><strong>Direct support between sessions</strong> as you move through the work</li>
+      <li><strong>A concrete 90-day action plan</strong> by the end of the program — not just insight, a next-move roadmap</li>
+      <li><strong>Full use of the Cultivator's Field Journal</strong> as your working document throughout</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Who This Is For</h2>
+    <p class="who">Leaders, veterans, thought leaders, conscious thinkers, and growth seekers — anyone standing at a turning point who's ready to stop circling the same ground and start walking a real path forward. This isn't for someone who wants to think about it — it's for someone <strong>ready to do it.</strong></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Investment</h2>
+    <div class="price-head">
+      <div class="amount"><sup>$</sup>2,000</div>
+      <div class="caption">Six weeks. One Method. Real support the whole way through.</div>
+    </div>
+
+    <table class="plans">
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Structure</th>
+          <th style="text-align:right;">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="plan-name">Pay in Full <span class="best-value">Best Value</span></td>
+          <td>One-time, at enrollment</td>
+          <td class="plan-total">$1,850</td>
+        </tr>
+        <tr>
+          <td class="plan-name">6-Week Plan</td>
+          <td>$333/week, matched to the program</td>
+          <td class="plan-total">$2,000</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Deposit + Plan</td>
+          <td>$500 to reserve your spot + 6 weekly payments of $250</td>
+          <td class="plan-total">$2,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="fine-print">Your spot is reserved once your first payment or deposit is received. Weekly access unlocks as each payment clears.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Ongoing Advisory</h2>
+    <p class="lede">Some leaders don't need a 6-week arc — they need a standing advisor in their corner. For thought leaders, conscious thinkers, and growth seekers operating at a higher level, I offer a month-by-month retainer: ongoing 1:1 advising built around the Method, structured around your pace and your season, not a fixed program length.</p>
+    <p style="margin-top:22px;">This isn't listed with a set price here — every retainer is scoped to the person and the work. If this sounds like what you need, reach out and we'll talk through what it looks like.</p>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="wrap">
+    <p class="capacity">This program runs in small, focused cohorts — space is limited so every Cultivator gets real attention.</p>
+    <a href="mailto:fieldsoffreedom411@gmail.com?subject=1:1%20Advising%20Application" class="apply-btn">Apply Now</a>
+    <p class="review-note">Applications are reviewed personally. If it's a fit, you'll hear back within 48 hours to schedule your first session.</p>
+
+    <p class="capacity" style="margin-top:56px;">Interested in ongoing advisory instead?</p>
+    <a href="mailto:fieldsoffreedom411@gmail.com?subject=Monthly%20Retainer%20Inquiry" class="apply-btn" style="background:transparent;color:var(--gold-bright);box-shadow:0 0 0 1px var(--gold);">Inquire About a Retainer</a>
+    <p class="review-note">This opens a direct conversation — no application, just a reply to start talking through fit and scope.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="signature">April Fields</div>
+  <div class="footer-sub">Fields of Freedom, LLC</div>
+</footer>
+
+</body>
+</html>
