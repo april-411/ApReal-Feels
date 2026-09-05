@@ -118,6 +118,93 @@
     transition: background 0.2s !important;
   }
   .nav-cta:hover { background: var(--gold-hi) !important; color: var(--black) !important; }
+  .store-nav-cta { white-space: nowrap; }
+
+  /* ── SALES ENGINE CTAs ── */
+  .hero-lead {
+    margin: 24px auto 0;
+    max-width: 720px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.35rem, 3.6vw, 2rem);
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--white);
+  }
+  .hero-lead em { color: var(--gold-hi); font-style: italic; }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .primary-cta, .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 22px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+  .primary-cta {
+    background: var(--gold);
+    color: var(--black);
+    border: 1px solid var(--gold);
+    box-shadow: 0 8px 24px rgba(200,145,31,0.16);
+  }
+  .primary-cta:hover { background: var(--gold-hi); border-color: var(--gold-hi); transform: translateY(-2px); }
+  .secondary-cta {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--border);
+  }
+  .secondary-cta:hover { border-color: var(--gold-lo); color: var(--gold-hi); }
+  .primary-cta.small { min-height: 42px; padding: 11px 18px; white-space: nowrap; }
+
+  .method-offer {
+    margin: -34px 0 56px;
+    padding: 24px 28px;
+    background: var(--deep);
+    border: 1px solid var(--gold-lo);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .offer-eyebrow {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .method-offer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: var(--white);
+    margin-bottom: 5px;
+  }
+  .method-offer p {
+    font-family: 'EB Garamond', serif;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  @media (max-width: 700px) {
+    .method-offer { flex-direction: column; align-items: stretch; text-align: center; margin-top: -34px; }
+    .primary-cta.small { width: 100%; }
+  }
 
   /* ── HERO ── */
   .hero {
@@ -850,6 +937,7 @@
 ═══════════════════════════════════════════════════════ -->
 <script>
 const SITE = {
+  storeUrl: "https://stan.store/aprealfeels",
   hubUrl: "hub.html",  // ← your hub page filename or full URL
   bookingUrl: "https://calendly.com/fieldsoffreedom/30min",
   instagramUrl: "https://www.instagram.com/sheshall_bpraisednfit",
@@ -1139,22 +1227,27 @@ const POSTS = [
     <a href="#about" class="hide-mobile">About</a>
     <a href="#method" class="hide-mobile">The Method</a>
     <a href="#books" class="hide-mobile">Books</a>
-    <a href="#advising" class="hide-mobile">Advising</a>
-  <a href="purpose-finder.html" class="nav-cta">Purpose Finder</a>
+    <a href="#mentorship" class="hide-mobile">Work With Me</a>
+    <a href="purpose-finder.html" class="hide-mobile">Purpose Finder</a>
     <a href="#" id="nav-hub-link">Hub</a>
-    <a href="#" id="nav-book-link" class="nav-cta">Book a Call</a>
+    <a href="https://stan.store/aprealfeels" target="_blank" rel="noopener" class="nav-cta store-nav-cta">Begin the Journey</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-top-rule"></div>
-  <span class="hero-eyebrow">The Official Page of</span>
+  <span class="hero-eyebrow">The Fields of Freedom Method</span>
   <h1 class="hero-title">
-    <span class="drop">F</span>ields of <em>Freedom, LLC</em>
+    <span class="drop">F</span>ields of <em>Freedom</em>
   </h1>
-  <p class="hero-sub">Helping others find their footing, own their story, and walk boldly into whatever comes next.</p>
-  <span class="hero-author">April Fields</span>
+  <p class="hero-lead">You don't need another version of yourself.<br><em>You need the freedom to become the one you've been trying to hear.</em></p>
+  <p class="hero-sub">A six-week self-guided journey to declare what you want, clear what no longer serves you, cultivate new beliefs, and take aligned action toward the life you want to create.</p>
+  <div class="hero-actions">
+    <a class="primary-cta" href="https://stan.store/aprealfeels" target="_blank" rel="noopener">Begin the Journey — $67</a>
+    <a class="secondary-cta" href="#method">Explore the Method</a>
+  </div>
+  <span class="hero-author">April Fields · Founder &amp; Transformation Mentor</span>
 </section>
 
 <!-- FILTER TABS -->
@@ -1232,6 +1325,14 @@ const POSTS = [
       </div>
       <div class="method-cta">View the Full Six-Week Framework →</div>
     </a>
+    <div class="method-offer">
+      <div>
+        <span class="offer-eyebrow">Ready to work the method?</span>
+        <h3>The Fields of Freedom Method</h3>
+        <p>Your complete six-week self-guided transformation workbook.</p>
+      </div>
+      <a class="primary-cta small" href="https://stan.store/aprealfeels" target="_blank" rel="noopener">Begin the Journey — $67</a>
+    </div>
   </div>
 
   <!-- PURPOSE QUIZ -->
