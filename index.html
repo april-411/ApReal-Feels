@@ -118,93 +118,6 @@
     transition: background 0.2s !important;
   }
   .nav-cta:hover { background: var(--gold-hi) !important; color: var(--black) !important; }
-  .store-nav-cta { white-space: nowrap; }
-
-  /* ── SALES ENGINE CTAs ── */
-  .hero-lead {
-    margin: 24px auto 0;
-    max-width: 720px;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.35rem, 3.6vw, 2rem);
-    font-weight: 700;
-    line-height: 1.35;
-    color: var(--white);
-  }
-  .hero-lead em { color: var(--gold-hi); font-style: italic; }
-
-  .hero-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-  }
-
-  .primary-cta, .secondary-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 46px;
-    padding: 12px 22px;
-    border-radius: 2px;
-    text-decoration: none;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
-  }
-  .primary-cta {
-    background: var(--gold);
-    color: var(--black);
-    border: 1px solid var(--gold);
-    box-shadow: 0 8px 24px rgba(200,145,31,0.16);
-  }
-  .primary-cta:hover { background: var(--gold-hi); border-color: var(--gold-hi); transform: translateY(-2px); }
-  .secondary-cta {
-    background: transparent;
-    color: var(--cream);
-    border: 1px solid var(--border);
-  }
-  .secondary-cta:hover { border-color: var(--gold-lo); color: var(--gold-hi); }
-  .primary-cta.small { min-height: 42px; padding: 11px 18px; white-space: nowrap; }
-
-  .method-offer {
-    margin: -34px 0 56px;
-    padding: 24px 28px;
-    background: var(--deep);
-    border: 1px solid var(--gold-lo);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 22px;
-  }
-  .offer-eyebrow {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .method-offer h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
-    color: var(--white);
-    margin-bottom: 5px;
-  }
-  .method-offer p {
-    font-family: 'EB Garamond', serif;
-    color: var(--muted);
-    font-size: 1rem;
-  }
-  @media (max-width: 700px) {
-    .method-offer { flex-direction: column; align-items: stretch; text-align: center; margin-top: -34px; }
-    .primary-cta.small { width: 100%; }
-  }
 
   /* ── HERO ── */
   .hero {
@@ -937,9 +850,9 @@
 ═══════════════════════════════════════════════════════ -->
 <script>
 const SITE = {
-  storeUrl: "https://stan.store/aprealfeels",
   hubUrl: "hub.html",  // ← your hub page filename or full URL
   bookingUrl: "https://calendly.com/fieldsoffreedom/30min",
+  storeUrl: "https://stan.store/aprealfeels",
   instagramUrl: "https://www.instagram.com/sheshall_bpraisednfit",
   tiktokUrl: "https://www.tiktok.com/@aprealfeels",
   youtubeUrl: "https://youtube.com/@aprealfeelstruth",
@@ -947,17 +860,17 @@ const SITE = {
 };
 
 const MENTORSHIP = {
-  title: "1:1 Mentorship — 6 Weeks",
+  title: "Private 1:1 Mentorship — 6 Weeks",
   price: "$2,000",
   priceNote: "per slot",
-  subtitle: "Five slots. Six weeks. Direct access to April — built entirely around where you are and where you're headed.",
+  subtitle: "Private one-on-one, in-person mentorship is currently closed. The next opening is planned for November 2026 — five spaces only.",
   slotsAvailable: 0,
   features: [
-    "<strong>Weekly 1:1 sessions</strong> with April — six weeks, one focused hour each",
+    "<strong>Private, in-person 1:1 sessions</strong> with April — six weeks, one focused hour each",
     "<strong>Direct message access</strong> between sessions for questions, wins, and real-time support",
     "<strong>A personalized arc</strong> — from root cause, to reframe, to a concrete plan you actually use",
     "<strong>A tangible takeaway</strong> at the end — something written and yours to keep",
-    "<strong>Her full attention</strong> — only 5 slots open at a time, no cohort"
+    "<strong>Her full attention</strong> — only 5 private spaces open at a time, no cohort"
   ]
 };
 
@@ -1227,27 +1140,22 @@ const POSTS = [
     <a href="#about" class="hide-mobile">About</a>
     <a href="#method" class="hide-mobile">The Method</a>
     <a href="#books" class="hide-mobile">Books</a>
-    <a href="#mentorship" class="hide-mobile">Work With Me</a>
-    <a href="purpose-finder.html" class="hide-mobile">Purpose Finder</a>
+    <a href="#advising" class="hide-mobile">Advising</a>
+  <a href="purpose-finder.html" class="nav-cta">Purpose Finder</a>
     <a href="#" id="nav-hub-link">Hub</a>
-    <a href="https://stan.store/aprealfeels" target="_blank" rel="noopener" class="nav-cta store-nav-cta">Begin the Journey</a>
+    <a href="#mentorship" class="nav-cta">November Mentorship</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-top-rule"></div>
-  <span class="hero-eyebrow">The Fields of Freedom Method</span>
+  <span class="hero-eyebrow">The Official Page of</span>
   <h1 class="hero-title">
-    <span class="drop">F</span>ields of <em>Freedom</em>
+    <span class="drop">F</span>ields of <em>Freedom, LLC</em>
   </h1>
-  <p class="hero-lead">You don't need another version of yourself.<br><em>You need the freedom to become the one you've been trying to hear.</em></p>
-  <p class="hero-sub">A six-week self-guided journey to declare what you want, clear what no longer serves you, cultivate new beliefs, and take aligned action toward the life you want to create.</p>
-  <div class="hero-actions">
-    <a class="primary-cta" href="https://stan.store/aprealfeels" target="_blank" rel="noopener">Begin the Journey — $67</a>
-    <a class="secondary-cta" href="#method">Explore the Method</a>
-  </div>
-  <span class="hero-author">April Fields · Founder &amp; Transformation Mentor</span>
+  <p class="hero-sub">Helping others find their footing, own their story, and walk boldly into whatever comes next.</p>
+  <span class="hero-author">April Fields</span>
 </section>
 
 <!-- FILTER TABS -->
@@ -1325,13 +1233,12 @@ const POSTS = [
       </div>
       <div class="method-cta">View the Full Six-Week Framework →</div>
     </a>
-    <div class="method-offer">
+    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding:22px 24px; margin-top:-40px; margin-bottom:56px; background:var(--surface); border:1px solid var(--border); border-top:0; border-radius:0 0 3px 3px;">
       <div>
-        <span class="offer-eyebrow">Ready to work the method?</span>
-        <h3>The Fields of Freedom Method</h3>
-        <p>Your complete six-week self-guided transformation workbook.</p>
+        <span style="font-size:0.58rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold);">The Self-Guided Journey</span>
+        <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--white); margin-top:5px;">The Fields of Freedom Method · $67</div>
       </div>
-      <a class="primary-cta small" href="https://stan.store/aprealfeels" target="_blank" rel="noopener">Begin the Journey — $67</a>
+      <a href="https://stan.store/aprealfeels" target="_blank" rel="noopener" style="font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:10px 18px; background:var(--gold); color:var(--black); border-radius:2px; text-decoration:none;">Begin the Journey →</a>
     </div>
   </div>
 
@@ -1391,7 +1298,7 @@ const POSTS = [
     <div class="modal-body" id="modal-body"></div>
     <div class="modal-footer">
       <span id="modal-book-source"></span>
-      <a href="#" id="modal-booking-link" target="_blank">Book a Session</a>
+      <a href="#" id="modal-booking-link" target="_blank">Join the November Waitlist</a>
     </div>
   </div>
 </div>
@@ -1401,7 +1308,6 @@ const POSTS = [
 document.addEventListener('DOMContentLoaded', () => {
   // apply site URLs
   document.getElementById('nav-hub-link').href = SITE.hubUrl;
-  document.getElementById('nav-book-link').href = SITE.bookingUrl;
   document.getElementById('modal-booking-link').href = SITE.bookingUrl;
 
   // footer links
@@ -1429,15 +1335,26 @@ function renderMentorship() {
     <div class="mentorship-card">
       <div class="mentorship-top">
         <h3>${m.title}</h3>
-        <div class="mentorship-price">${m.price}<span>${m.priceNote}</span></div>
+        <div class="mentorship-price" style="font-size:1.15rem; letter-spacing:1px; text-transform:uppercase;">Currently Closed<span>Next opening: November 2026</span></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 18px;">
+        <span style="font-size:0.58rem; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold-hi); border:1px solid var(--gold-lo); padding:6px 9px;">Private</span>
+        <span style="font-size:0.58rem; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold-hi); border:1px solid var(--gold-lo); padding:6px 9px;">1:1</span>
+        <span style="font-size:0.58rem; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold-hi); border:1px solid var(--gold-lo); padding:6px 9px;">In Person</span>
+        <span style="font-size:0.58rem; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold-hi); border:1px solid var(--gold-lo); padding:6px 9px;">Five Spaces</span>
       </div>
       <p class="mentorship-sub">${m.subtitle}</p>
       <ul class="mentorship-features">
         ${m.features.map(f => `<li>${f}</li>`).join('')}
       </ul>
+      <div style="padding:18px 0; margin-bottom:18px; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+        <div style="font-size:0.58rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--muted);">Next Opening</div>
+        <div style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:900; color:var(--gold-hi); margin-top:4px;">November 2026</div>
+        <div style="font-family:'EB Garamond',serif; font-size:1rem; color:var(--cream); margin-top:4px;">Five private 1:1 in-person spaces will open.</div>
+      </div>
       <div class="mentorship-footer">
-        <span class="mentorship-slots"><strong>${m.slotsAvailable}</strong> slots available</span>
-        <a href="mailto:fieldsoffreedom411@gmail.com?subject=Mentorship%20Application" class="mentorship-cta">Apply / Book a Call</a>
+        <span class="mentorship-slots"><strong>5</strong> spaces will open</span>
+        <a href="mailto:fieldsoffreedom411@gmail.com?subject=November%202026%20Private%20Mentorship" class="mentorship-cta">Join the November Waitlist</a>
       </div>
     </div>
   `;
