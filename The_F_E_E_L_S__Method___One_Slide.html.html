@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The F.E.E.L.S. Method by April Fields — Focus, Explore, Elevate, Lead, Sustain. A framework for personal growth and empowered living.">
+<title>F.E.E.L.S. Method | Fields of Freedom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#050505;
+  --black2:#0b0b0a;
+  --gold:#d9a72f;
+  --gold2:#f4cf62;
+  --cream:#f7f1df;
+  --muted:#c9c1ad;
+  --green:#0d6b38;
+  --green2:#143d28;
+  --line:rgba(244,207,98,.28);
+  --card:rgba(255,255,255,.045);
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--cream);font-family:Inter,Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(calc(100% - 32px),var(--max));margin:auto}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.08em;font-size:15px}
+.brand-mark{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-family:'Cormorant Garamond',serif;font-size:21px}
+.navlinks{display:flex;gap:22px;font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+.navlinks a:hover{color:var(--gold2)}
+
+/* Hero */
+.hero{padding:42px 0 30px;text-align:center;overflow:hidden}
+.logo{width:min(420px,86vw);margin:0 auto 20px;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:.2em;font-size:11px;font-weight:700;margin:8px 0 12px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(38px,7vw,70px);line-height:1.02;margin:0 auto 14px;max-width:900px}
+.lead{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,30px);line-height:1.25;color:#e9e0cc;max-width:760px;margin:0 auto}
+.hero-rule{width:160px;height:1px;background:var(--gold);margin:26px auto}
+
+/* Intro */
+.intro{padding:30px 0 58px}
+.intro-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:stretch}
+.panel{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:22px;padding:28px}
+.panel h2,.section-title{font-family:'Playfair Display',serif;font-size:32px;margin:0 0 12px}
+.panel p{color:var(--muted);margin:0 0 14px}
+.quote{border-left:2px solid var(--gold);padding-left:18px;color:#eee5d2;font-family:'Cormorant Garamond',serif;font-size:25px;line-height:1.25}
+
+/* Method */
+.method{padding:26px 0 70px}
+.section-head{text-align:center;max-width:760px;margin:0 auto 30px}
+.section-head p{color:var(--muted);margin:0}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.stage{position:relative;min-height:310px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 17px;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+.stage:hover{transform:translateY(-4px);border-color:rgba(244,207,98,.65)}
+.stage:before{content:"";position:absolute;inset:auto -30px -55px auto;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(15,108,56,.38),transparent 68%)}
+.letter{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f3ca5a,#a66d0e);color:#090909;font-family:'Playfair Display',serif;font-weight:800;font-size:25px;margin-bottom:17px;box-shadow:0 7px 20px rgba(0,0,0,.3)}
+.stage h3{font-family:'Playfair Display',serif;font-size:25px;margin:0 0 4px}
+.stage .tagline{color:var(--gold2);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:13px}
+.stage p{font-size:14px;color:var(--muted);margin:0 0 15px}
+.stage ul{padding-left:17px;margin:0;color:#ded5c1;font-size:13px}
+.stage li{margin:5px 0}
+
+/* Journey */
+.journey{padding:65px 0;background:linear-gradient(180deg,transparent,rgba(14,60,39,.18),transparent)}
+.journey-list{display:grid;gap:12px;max-width:900px;margin:auto}
+.journey-row{display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+.jnum{width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-family:'Playfair Display',serif;font-size:20px}
+.journey-row h3{margin:0 0 3px;font-family:'Playfair Display',serif;font-size:22px}
+.journey-row p{margin:0;color:var(--muted);font-size:14px}
+.arrow{text-align:center;color:var(--gold2);font-size:22px;margin:-5px 0}
+
+/* Practice */
+.practice{padding:65px 0}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.practice-card{padding:23px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.practice-card span{display:inline-block;color:var(--gold2);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px}
+.practice-card h3{font-family:'Playfair Display',serif;margin:0 0 8px;font-size:22px}
+.practice-card p{margin:0;color:var(--muted);font-size:14px}
+
+/* Reflection */
+.reflection{padding:70px 0}
+.reflection-box{max-width:900px;margin:auto;text-align:center;padding:38px 26px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(145deg,rgba(17,70,43,.32),rgba(255,255,255,.025))}
+.reflection-box h2{font-family:'Playfair Display',serif;font-size:36px;margin:0 0 12px}
+.reflection-box p{color:var(--muted);max-width:700px;margin:0 auto 24px}
+.questions{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:left}
+.q{padding:15px;border:1px solid rgba(244,207,98,.18);border-radius:14px;background:rgba(0,0,0,.2)}
+.q strong{color:var(--gold2);font-size:14px}.q p{font-size:12px;margin:5px 0 0;color:#d8cfbd}
+
+/* Legacy */
+.legacy{padding:45px 0 70px}
+.legacy-box{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+.legacy-note{border:1px solid var(--line);border-radius:20px;padding:25px;background:rgba(255,255,255,.03)}
+.legacy-note h2{font-family:'Playfair Display',serif;margin:0 0 10px;font-size:28px}
+.legacy-note p{margin:0;color:var(--muted);font-size:14px}
+.old-flow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.old-pill{border:1px solid rgba(244,207,98,.28);border-radius:999px;padding:10px 14px;color:#ddd3be;font-size:12px;background:rgba(255,255,255,.025)}
+.old-pill b{color:var(--gold2)}
+
+.cta{text-align:center;padding:55px 0 72px;border-top:1px solid var(--line)}
+.cta h2{font-family:'Playfair Display',serif;font-size:38px;margin:0 0 10px}
+.cta p{color:var(--muted);max-width:650px;margin:0 auto 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;border:1px solid var(--gold);color:#090909;background:linear-gradient(135deg,#f4d36c,#c38b1d);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.btn.secondary{margin-left:8px;background:transparent;color:var(--gold2)}
+footer{padding:25px 0 34px;text-align:center;color:#8e8778;font-size:11px;border-top:1px solid rgba(255,255,255,.07)}
+footer strong{color:#c6bda9}
+
+@media(max-width:900px){
+  .navlinks{display:none}
+  .intro-grid,.legacy-box{grid-template-columns:1fr}
+  .stages{grid-template-columns:repeat(2,1fr)}
+  .stage:last-child{grid-column:1/-1}
+  .practice-grid{grid-template-columns:1fr 1fr}
+  .questions{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{width:min(calc(100% - 22px),var(--max))}
+  .nav{min-height:62px}.brand{font-size:13px}.brand-mark{width:34px;height:34px}
+  .hero{padding-top:25px}.logo{width:min(350px,92vw)}
+  h1{font-size:39px}.lead{font-size:23px}
+  .panel{padding:22px;border-radius:18px}.panel h2,.section-title{font-size:28px}
+  .stages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+  .stage{min-width:82vw;scroll-snap-align:start;min-height:290px}
+  .method{padding-bottom:48px}
+  .journey{padding:48px 0}.journey-row{grid-template-columns:48px 1fr;padding:16px}.jnum{width:42px;height:42px}
+  .practice{padding:48px 0}.practice-grid{grid-template-columns:1fr}
+  .reflection{padding:48px 0}.reflection-box{padding:30px 18px}.reflection-box h2{font-size:31px}.questions{grid-template-columns:1fr}
+  .cta{padding:45px 0 58px}.cta h2{font-size:32px}.btn{width:100%}.btn.secondary{margin:9px 0 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Fields of Freedom home">
+      <span class="brand-mark">F</span> FIELDS OF FREEDOM
+    </a>
+    <nav class="navlinks" aria-label="Framework navigation">
+      <a href="#method">The Method</a>
+      <a href="#journey">The Journey</a>
+      <a href="#practice">In Practice</a>
+      <a href="#reflection">Reflect</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <img class="logo" src="feels-method-logo.png" alt="Fields Method — F.E.E.L.S. for personal growth and empowered living">
+    <div class="eyebrow">The Current Fields of Freedom Framework</div>
+    <h1>The F.E.E.L.S. Method</h1>
+    <p class="lead">A practical path for moving from clarity to action — and from action to a freedom you can actually sustain.</p>
+    <div class="hero-rule"></div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container intro-grid">
+    <article class="panel">
+      <h2>What F.E.E.L.S. Is</h2>
+      <p>The F.E.E.L.S. Method is a five-part framework for personal growth and empowered living. It gives you a simple way to pause, understand where you are, identify what matters, take intentional action, and build a life you can continue to live with purpose.</p>
+      <p>It is not about becoming someone else. It is about becoming more intentional about who you already are, what you value, and what you are building.</p>
+    </article>
+    <aside class="panel">
+      <div class="quote">“Freedom is not only about getting out of what no longer fits. It is also about learning how to live well in what you are building next.”</div>
+    </aside>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Five Connected Movements</div>
+      <h2 class="section-title">The F.E.E.L.S. Framework</h2>
+      <p>Each stage answers a different question. Together, they create a repeatable rhythm for growth.</p>
+    </div>
+    <div class="stages">
+      <article class="stage">
+        <div class="letter">F</div>
+        <h3>Focus</h3>
+        <div class="tagline">Get clear on what matters.</div>
+        <p>Slow down long enough to identify what deserves your attention, energy, and intention.</p>
+        <ul><li>Clarify what matters now.</li><li>Name your priorities.</li><li>Separate signal from noise.</li></ul>
+      </article>
+      <article class="stage">
+        <div class="letter">E</div>
+        <h3>Explore</h3>
+        <div class="tagline">Discover your strengths and options.</div>
+        <p>Get curious about your abilities, experiences, interests, resources, and the possibilities in front of you.</p>
+        <ul><li>Notice your strengths.</li><li>Consider your options.</li><li>Ask better questions.</li></ul>
+      </article>
+      <article class="stage">
+        <div class="letter">E</div>
+        <h3>Elevate</h3>
+        <div class="tagline">Build skills. Shift mindset. Take action.</div>
+        <p>Turn awareness into development. Strengthen the skills, habits, beliefs, and behaviors that support the life you want to build.</p>
+        <ul><li>Learn and practice.</li><li>Challenge limiting patterns.</li><li>Take the next meaningful step.</li></ul>
+      </article>
+      <article class="stage">
+        <div class="letter">L</div>
+        <h3>Lead</h3>
+        <div class="tagline">Inspire others. Create impact.</div>
+        <p>Use what you are learning to make decisions, influence your environment, serve others, and create meaningful impact.</p>
+        <ul><li>Lead yourself first.</li><li>Communicate with intention.</li><li>Create impact beyond yourself.</li></ul>
+      </article>
+      <article class="stage">
+        <div class="letter">S</div>
+        <h3>Sustain</h3>
+        <div class="tagline">Live with purpose. Enjoy the freedom.</div>
+        <p>Protect what you have built by creating rhythms, boundaries, relationships, and choices that make growth livable.</p>
+        <ul><li>Maintain what matters.</li><li>Adjust without abandoning yourself.</li><li>Make room for joy and freedom.</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="journey" id="journey">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">The Movement</div>
+      <h2 class="section-title">How the Method Flows</h2>
+      <p>F.E.E.L.S. can be used as a journey, a decision-making tool, or a reset whenever life changes.</p>
+    </div>
+    <div class="journey-list">
+      <div class="journey-row"><div class="jnum">1</div><div><h3>Focus → What matters?</h3><p>Before you move, identify what deserves your attention.</p></div></div>
+      <div class="arrow">↓</div>
+      <div class="journey-row"><div class="jnum">2</div><div><h3>Explore → What is possible?</h3><p>Look inward and outward for strengths, choices, resources, and opportunities.</p></div></div>
+      <div class="arrow">↓</div>
+      <div class="journey-row"><div class="jnum">3</div><div><h3>Elevate → What needs to grow?</h3><p>Develop the mindset, knowledge, skills, and habits that move you forward.</p></div></div>
+      <div class="arrow">↓</div>
+      <div class="journey-row"><div class="jnum">4</div><div><h3>Lead → What will you do with it?</h3><p>Make intentional choices and turn growth into action and impact.</p></div></div>
+      <div class="arrow">↓</div>
+      <div class="journey-row"><div class="jnum">5</div><div><h3>Sustain → How will you keep living it?</h3><p>Create a life where the progress you make can actually be maintained and enjoyed.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="practice" id="practice">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Use It Anywhere</div>
+      <h2 class="section-title">F.E.E.L.S. In Practice</h2>
+      <p>The framework can be applied to a goal, transition, relationship, career decision, leadership challenge, creative project, or personal reset.</p>
+    </div>
+    <div class="practice-grid">
+      <article class="practice-card"><span>When you're stuck</span><h3>Start with Focus</h3><p>Ask: “What actually matters here?” Clarity can reduce the noise enough to identify the next move.</p></article>
+      <article class="practice-card"><span>When you're unsure</span><h3>Explore before deciding</h3><p>Ask: “What strengths, choices, resources, or possibilities am I overlooking?”</p></article>
+      <article class="practice-card"><span>When you're ready</span><h3>Elevate the capacity</h3><p>Ask: “What do I need to learn, practice, change, or strengthen to move forward?”</p></article>
+      <article class="practice-card"><span>When action begins</span><h3>Lead intentionally</h3><p>Ask: “What decision, behavior, or example will turn this insight into impact?”</p></article>
+      <article class="practice-card"><span>When progress is real</span><h3>Sustain the freedom</h3><p>Ask: “What needs to become a rhythm, boundary, or support so this can last?”</p></article>
+      <article class="practice-card"><span>When life changes</span><h3>Feel your way back through</h3><p>Return to Focus. Revisit what matters now, then move through the stages again with the new information you have.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="reflection" id="reflection">
+  <div class="container">
+    <div class="reflection-box">
+      <div class="eyebrow">A Personal Reset</div>
+      <h2>Five Questions to Carry With You</h2>
+      <p>Use these questions for journaling, conversation, coaching, planning, or a quiet reset at the end of the day.</p>
+      <div class="questions">
+        <div class="q"><strong>F — Focus</strong><p>What matters most right now?</p></div>
+        <div class="q"><strong>E — Explore</strong><p>What strengths and options do I have?</p></div>
+        <div class="q"><strong>E — Elevate</strong><p>What needs to grow in me?</p></div>
+        <div class="q"><strong>L — Lead</strong><p>What will I do with what I know?</p></div>
+        <div class="q"><strong>S — Sustain</strong><p>How will I make this freedom livable?</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="legacy">
+  <div class="container legacy-box">
+    <div class="legacy-note">
+      <div class="eyebrow">The Evolution</div>
+      <h2>From Fields of Freedom to F.E.E.L.S.</h2>
+      <p>The earlier Fields of Freedom writing used the language of <strong>Declare → Clear → Cultivate → Harvest</strong>. That work remains part of the story and archive. F.E.E.L.S. is the current expression of the framework — a five-part language designed to make the work easier to recognize, practice, and carry into everyday life.</p>
+    </div>
+    <div class="old-flow" aria-label="Original Fields of Freedom framework">
+      <span class="old-pill"><b>Declare</b> — name it</span>
+      <span class="old-pill"><b>Clear</b> — make room</span>
+      <span class="old-pill"><b>Cultivate</b> — nurture it</span>
+      <span class="old-pill"><b>Harvest</b> — receive and use it</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="eyebrow">Fields of Freedom</div>
+    <h2>Feel it. Build it. Live it.</h2>
+    <p>Growth is not a single destination. It is a practice of returning to what matters, learning what you need, taking intentional action, and creating a life you can sustain.</p>
+    <a class="btn" href="index.html">Return to Fields of Freedom</a>
+    <a class="btn secondary" href="purpose-finder.html">Explore the F.E.E.L.S. Quiz</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container"><strong>F.E.E.L.S. Method</strong> · Fields of Freedom · April Fields</div>
+</footer>
+</body>
+</html>
