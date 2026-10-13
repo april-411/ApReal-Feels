@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F.E.E.L.S. Self-Mastery Journal and Advising | Fields of Freedom</title>
+<meta name="description" content="The F.E.E.L.S. Self-Mastery Journal with six videos, and six-week one-on-one Advising, by Ap'Real.">
+<!-- Journal and Advising buttons connect to the Ap'Real Feels Stan Store. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Zilla+Slab:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mist: #ECEFE8;
+    --ink: #1E241C;
+    --furrow: #3E5B3A;
+    --wheat: #D8A93B;
+    --soil: #2B2219;
+    --soil-text: #EFE9DC;
+    --rule: rgba(30, 36, 28, 0.22);
+    --slab: "Zilla Slab", Georgia, "Times New Roman", serif;
+    --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--mist);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--wheat); outline-offset: 3px; }
+
+  .wrap { width: min(100% - 2rem, 62rem); margin-inline: auto; }
+
+  /* Header */
+  .site-head { padding-block: 1.25rem; }
+  .site-head .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .wordmark { font-family: var(--slab); font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+  .site-nav { display: flex; gap: 1.25rem; font-weight: 500; }
+  .site-nav a { text-decoration: none; border-bottom: 2px solid transparent; }
+  .site-nav a:hover { border-bottom-color: var(--furrow); }
+
+  /* Hero */
+  .hero { padding-top: clamp(2.5rem, 7vw, 5rem); }
+  .question {
+    font-family: var(--slab);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 6.4vw, 4.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    max-width: 17em;
+    margin: 0 0 1.5rem;
+  }
+  .hero-sub { max-width: 34rem; font-size: 1.1875rem; margin: 0 0 2rem; }
+  .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--furrow);
+    background: var(--furrow);
+    color: #fff;
+  }
+  .btn:hover { background: var(--ink); border-color: var(--ink); }
+  .btn.quiet { background: transparent; color: var(--furrow); }
+  .btn.quiet:hover { background: var(--furrow); color: #fff; }
+  .btn.on-soil { background: var(--wheat); border-color: var(--wheat); color: var(--soil); }
+  .btn.on-soil:hover { background: var(--soil-text); border-color: var(--soil-text); }
+
+  /* The one memorable element: planted rows, drawn once on load */
+  .furrows {
+    height: 5.25rem;
+    background: repeating-linear-gradient(to bottom, var(--furrow) 0 4px, transparent 4px 17px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.15) 100%);
+            mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.15) 100%);
+    transform-origin: left center;
+    animation: plant 1.4s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes plant { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* Sections */
+  .section { padding-block: clamp(3rem, 8vw, 5.5rem); }
+  h2 {
+    font-family: var(--slab);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4.4vw, 2.6rem);
+    line-height: 1.12;
+    margin: 0 0 1rem;
+    max-width: 20em;
+  }
+  .lede { max-width: 36rem; margin: 0 0 2.25rem; }
+
+  /* Stages: rooms in one house, so no numbering */
+  .stages { margin: 0; border-top: 2px solid var(--ink); }
+  .stages > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding-block: 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .stages dt { font-family: var(--slab); font-weight: 700; font-size: 1.5rem; }
+  .stages dd { margin: 0; }
+  @media (min-width: 40rem) {
+    .stages > div { grid-template-columns: 14rem 1fr; align-items: baseline; gap: 1.5rem; }
+  }
+
+  /* Journal offer */
+  .offer { display: grid; gap: 2rem; }
+  @media (min-width: 52rem) { .offer { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+  .price { font-family: var(--slab); font-weight: 700; font-size: 2.75rem; line-height: 1; margin: 0 0 0.35rem; }
+  .price-note { margin: 0 0 1.75rem; max-width: 24rem; }
+  .inside { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+  .inside li { padding-block: 0.7rem; border-bottom: 1px solid var(--rule); }
+  .inside strong { font-weight: 600; }
+
+  /* Advising offer */
+  .soil { background: var(--soil); color: var(--soil-text); }
+  .soil h2 { color: #fff; }
+  .soil .price { color: var(--wheat); }
+  .pay { margin: 0 0 1.75rem; border-top: 2px solid var(--wheat); }
+  .pay > div { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.7rem; border-bottom: 1px solid rgba(239, 233, 220, 0.25); }
+  .pay dt { margin: 0; }
+  .pay dd { margin: 0; font-weight: 600; text-align: right; }
+  .fine { margin: 1.25rem 0 0; max-width: 26rem; opacity: 0.9; }
+
+  /* Footer */
+  .site-foot { padding-block: 3rem; }
+  .sign-off { font-family: var(--slab); font-weight: 700; font-size: 1.6rem; margin: 0 0 0.35rem; }
+  .site-foot p { margin: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .furrows { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="./">Fields of Freedom</a>
+    <nav class="site-nav" aria-label="Page sections">
+      <a href="#journal">Journal</a>
+      <a href="#advising">Advising</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="question">What is life showing me right now, and what am I going to do with what I see?</h1>
+      <p class="hero-sub">The F.E.E.L.S. Self-Mastery Journal teaches you to read it. Six-week Advising walks the work with you. Both are by Ap&rsquo;Real.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#journal">See the journal</a>
+        <a class="btn quiet" href="#advising">See Advising</a>
+      </div>
+    </div>
+    <div class="furrows" aria-hidden="true"></div>
+  </section>
+
+  <section class="section" aria-labelledby="stages-title">
+    <div class="wrap">
+      <h2 id="stages-title">Five stages. Return to any of them.</h2>
+      <p class="lede">They are not steps on a ladder. They are rooms in the same house. When life changes, you don&rsquo;t start over. You return.</p>
+      <dl class="stages">
+        <div><dt>Face It</dt><dd>Tell the truth before you try to change the story.</dd></div>
+        <div><dt>Embrace It</dt><dd>Claim what matters.</dd></div>
+        <div><dt>Engineer It</dt><dd>Build the conditions that make it possible.</dd></div>
+        <div><dt>Live It</dt><dd>Let the work show up in real life.</dd></div>
+        <div><dt>Sustain It</dt><dd>What you protect is what lasts.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="journal" aria-labelledby="journal-title" style="padding-top:0">
+    <div class="wrap offer">
+      <div>
+        <h2 id="journal-title">The F.E.E.L.S. Self-Mastery Journal, with six videos</h2>
+        <p class="price">$47</p>
+        <p class="price-note">Digital journal and all six video lessons, in one purchase. It stands on its own.</p>
+        <a class="btn" href="https://stan.store/aprealfeels">Get the journal</a>
+      </div>
+      <ul class="inside">
+        <li><strong>Six videos.</strong> A welcome, then one lesson for each stage.</li>
+        <li><strong>The Question.</strong> One page to begin, and the one you return to each season.</li>
+        <li><strong>Field Labs.</strong> Walk any real situation through what you felt, what you told yourself, and what was true.</li>
+        <li><strong>The Pause.</strong> Six questions for the middle of a hard moment.</li>
+        <li><strong>Difficult Conversation Lab and Decision Lab.</strong> Write it first, then say it.</li>
+        <li><strong>Evidence Log.</strong> Capture the quiet proof of who you are becoming.</li>
+        <li><strong>90-Day Field.</strong> Plant, tend, harvest, with checkpoints at day 30, 60, and 90.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section soil" id="advising" aria-labelledby="advising-title">
+    <div class="wrap offer">
+      <div>
+        <h2 id="advising-title">Six weeks, one-on-one, built around your life</h2>
+        <p class="price">$2,000</p>
+        <p class="price-note">Virtual sessions using the F.E.E.L.S. Method. You leave with a 90-day action plan. The next cohort begins in November 2026.</p>
+        <a class="btn on-soil" href="https://stan.store/aprealfeels">Apply for the November cohort</a>
+        <p class="fine">Page 28 of the journal helps you arrive prepared. No pressure. No requirement.</p>
+      </div>
+      <div>
+        <h3 class="visually-hidden" style="position:absolute;left:-9999px">Payment options</h3>
+        <dl class="pay">
+          <div><dt>Pay in full</dt><dd>$1,850</dd></div>
+          <div><dt>Weekly plan</dt><dd>6 payments of $333</dd></div>
+          <div><dt>Deposit plan</dt><dd>$500 down, then 6 payments of $250</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p class="sign-off">With you in the field.</p>
+    <p>Fields of Freedom</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
