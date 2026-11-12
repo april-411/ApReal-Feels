@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ap'Real Feels · F.E.E.L.S. Method</title>
-  <meta name="description" content="The F.E.E.L.S. Method by Ap'Real Feels — for individuals (Face It, Embrace It, Engineer It, Live It, Sustain It) and for organizations (Focus, Explore, Elevate, Lead, Sustain).">
+  <title>April Fields · Ap'Real Feels — Writing, Memoir &amp; Mentorship</title>
+  <meta name="description" content="April Fields: retired Army Signal Officer, author of the memoir Feels (coming spring 2027), and mentor. Essays on becoming, healing, and legacy; one-on-one mentorship; and the F.E.E.L.S. self-mastery journal.">
   <meta name="theme-color" content="#0A0906">
   <link rel="canonical" href="https://april-411.github.io/ApReal-Feels/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ap'Real Feels · The F.E.E.L.S. Method">
-  <meta property="og:description" content="A practical method for personal growth and empowered living, plus a leadership edition for teams. Mentorship, journals, and a memoir in progress.">
+  <meta property="og:title" content="April Fields · Ap'Real Feels">
+  <meta property="og:description" content="I write about becoming who you were always meant to be. Essays, a memoir coming spring 2027, and one-on-one mentorship.">
   <meta property="og:url" content="https://april-411.github.io/ApReal-Feels/">
-  <meta property="og:image" content="https://april-411.github.io/ApReal-Feels/feels-method-logo.png">
+  <meta property="og:image" content="https://april-411.github.io/ApReal-Feels/april-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="./feels-method-logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -1345,7 +1345,88 @@
     .card-tag { font-size: .54rem; letter-spacing: 1.5px; }
     .card-date { font-size: .58rem; }
   }
-  </style>
+  
+  /* ═══════ DRAFT: writing-first homepage ═══════ */
+  .hero2 { max-width:1040px; margin:0 auto; padding:56px 24px 44px; display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center; animation:fadeUp .8s ease both; }
+  .hero2-title { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(2rem,4.6vw,3.3rem); line-height:1.1; color:var(--white); letter-spacing:-.5px; }
+  .hero2-title em { font-style:italic; color:var(--gold-hi); }
+  .hero2-sub { margin-top:22px; font-family:'EB Garamond',serif; font-size:1.25rem; line-height:1.65; color:var(--cream); max-width:520px; }
+  .hero2-sub em { color:var(--gold-hi); }
+  .hero2-cta { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+  .btn-gold, .btn-ghost { display:inline-block; font-family:'Raleway',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:14px 24px; border-radius:2px; text-decoration:none; transition:all .2s; cursor:pointer; }
+  .btn-gold { background:var(--gold); color:var(--black); border:1px solid var(--gold); }
+  .btn-gold:hover { background:var(--gold-hi); border-color:var(--gold-hi); }
+  .btn-ghost { color:var(--gold-hi); border:1px solid var(--gold-lo); background:transparent; }
+  .btn-ghost:hover { border-color:var(--gold); background:var(--tag-bg); }
+  .hero2-photo { margin:0; position:relative; }
+  .hero2-photo img { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 40%; border-radius:3px; border:1px solid var(--border); box-shadow:0 20px 60px rgba(0,0,0,.55); }
+  .hero2-photo::before { content:''; position:absolute; inset:14px -14px -14px 14px; border:1px solid var(--gold-lo); border-radius:3px; z-index:-1; }
+
+  .strip-wrap { max-width:1040px; margin:0 auto 52px; padding:0 24px; }
+  .book-strip { display:flex; align-items:center; justify-content:center; gap:10px 22px; flex-wrap:wrap; text-align:center; padding:16px 22px; background:var(--card); border:1px solid var(--border); border-left:3px solid var(--gold); border-radius:3px; text-decoration:none; transition:border-color .2s; }
+  .book-strip:hover { border-color:var(--gold-lo); border-left-color:var(--gold); }
+  .book-strip .tag { font-size:.58rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); }
+  .book-strip strong { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--white); }
+  .book-strip .go { font-size:.62rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold-hi); }
+
+  .start-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:56px; }
+  .start-grid .post-card .excerpt { display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; overflow:hidden; }
+  .start-role { display:block; font-size:.56rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold-hi); margin-bottom:10px; }
+  .section-intro { font-family:'EB Garamond',serif; font-size:1.1rem; line-height:1.7; color:var(--muted); margin:-6px 0 22px; max-width:620px; }
+
+  #writings .filter-wrap { padding:0; margin:0 0 26px; max-width:none; }
+
+  .photo-slot { position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; background:var(--surface); border:1px dashed var(--gold-lo); border-radius:3px; color:var(--muted); font-size:.62rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; line-height:1.8; padding:16px; }
+  .photo-slot:has(img) { border-style:solid; border-color:var(--border); padding:0; }
+  .photo-slot img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .photo-slot small { display:block; font-size:.56rem; letter-spacing:1.5px; color:var(--gold-lo); text-transform:none; font-weight:600; }
+  .slot-45 { aspect-ratio:4/5; }
+  .slot-32 { aspect-ratio:3/2; }
+  .slot-169 { aspect-ratio:16/9; }
+
+  .mentor-intro { display:grid; grid-template-columns:1fr 1.1fr; gap:28px; align-items:center; margin-bottom:26px; }
+  .mentor-intro p { font-family:'EB Garamond',serif; font-size:1.15rem; line-height:1.75; color:var(--cream); }
+  .mentor-intro p + p { margin-top:12px; }
+  #mentorship .feels-strips { margin:0 0 30px; max-width:none; }
+
+  .journal-card { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; background:var(--card); border:1px solid var(--border); border-top:2px solid var(--gold); border-radius:3px; padding:32px; margin-bottom:56px; }
+  .journal-card h3 { font-family:'Playfair Display',serif; font-size:1.6rem; line-height:1.2; color:var(--white); margin:10px 0 4px; }
+  .journal-by { font-family:'EB Garamond',serif; font-style:italic; color:var(--muted); font-size:1rem; }
+  .journal-quote { font-family:'Playfair Display',serif; font-style:italic; color:var(--gold-hi); font-size:1.18rem; line-height:1.45; margin:18px 0 14px; padding-left:16px; border-left:2px solid var(--gold-lo); }
+  .journal-card p.body { font-family:'EB Garamond',serif; font-size:1.08rem; line-height:1.7; color:var(--cream); margin-bottom:20px; }
+  .journal-video iframe { width:100%; aspect-ratio:16/9; border:0; border-radius:3px; display:block; }
+
+  .book-wrap { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
+  .book-wrap .books-grid { grid-template-columns:1fr; }
+  .book-notify { margin-top:16px; }
+
+  .subscribe-card { max-width:680px; margin:56px auto 0; text-align:center; background:var(--card); border:1px solid var(--border); border-top:2px solid var(--gold); border-radius:3px; padding:40px 32px; }
+  .subscribe-card h3 { font-family:'Playfair Display',serif; font-size:1.8rem; line-height:1.2; color:var(--white); }
+  .subscribe-card p.lede { font-family:'EB Garamond',serif; font-size:1.12rem; line-height:1.7; color:var(--cream); margin:12px auto 24px; max-width:520px; }
+  .subscribe-form { display:flex; gap:10px; max-width:480px; margin:0 auto; }
+  .subscribe-form input[type=email] { flex:1; min-width:0; font-family:'Raleway',sans-serif; font-size:.9rem; color:var(--white); background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:14px 16px; }
+  .subscribe-form input[type=email]:focus { outline:none; border-color:var(--gold); }
+  .subscribe-fine { margin-top:14px; font-size:.66rem; letter-spacing:.4px; color:var(--muted); }
+  .subscribe-fine a { color:var(--gold-hi); }
+  #subscribe-msg { margin-top:14px; font-size:.8rem; color:var(--gold-hi); min-height:1.2em; }
+
+  @media (max-width:820px) {
+    .hero2 { grid-template-columns:1fr; gap:30px; padding:30px 18px 34px; }
+    .hero2-photo { order:-1; max-width:380px; margin:0 auto; width:100%; }
+    .hero2-photo img { aspect-ratio:5/4; object-position:50% 52%; }
+    .hero2-photo::before { inset:10px -8px -10px 8px; }
+    .hero2-sub { font-size:1.12rem; }
+    .strip-wrap { padding:0 14px; margin-bottom:38px; }
+    .start-grid { grid-template-columns:1fr; margin-bottom:40px; }
+    .mentor-intro, .journal-card, .book-wrap { grid-template-columns:1fr; }
+    .journal-card { padding:22px 18px; margin-bottom:40px; }
+    .subscribe-card { padding:30px 18px; margin-top:40px; }
+    .subscribe-form { flex-direction:column; }
+    .subscribe-form .btn-gold { width:100%; }
+    .about-photo { float:none !important; max-width:300px !important; margin:0 auto 22px !important; }
+  }
+
+</style>
 </head>
 <body id="top">
 
@@ -1361,7 +1442,12 @@ const SITE = {
   instagramUrl: "https://www.instagram.com/sheshall_bpraisednfit",
   tiktokUrl: "https://www.tiktok.com/@aprealfeels",
   youtubeUrl: "https://youtube.com/@aprealfeels",
-  email: "fieldsoffreedom411@gmail.com"
+  email: "fieldsoffreedom411@gmail.com",
+  // EMAIL LIST: paste your email service's form POST URL here (Kit, MailerLite, Buttondown, etc.)
+  // and set the field name that service expects. While emailFormAction is empty, the signup
+  // form falls back to opening an email to the address above, so no signups are lost silently.
+  emailFormAction: "",
+  emailFieldName: "email"
 };
 
 const MENTORSHIP = {
@@ -1377,6 +1463,16 @@ const MENTORSHIP = {
     "<strong>A private space to think out loud</strong>, work through a challenge, and move forward with intention"
   ]
 };
+
+// JOURNAL: when your video is recorded, paste its embed URL here (YouTube embed link).
+const JOURNAL = { video: "" };
+
+// START HERE: three essays, matched by the beginning of the post title. Change these to swap picks.
+const START_HERE = [
+  { match: "Before I Knew My Own Name", role: "Her story" },
+  { match: "You Are the One Who Validates", role: "The idea" },
+  { match: "What Nobody Tells You About Starting Over", role: "The invitation" }
+];
 
 const BOOKS = [
   {
@@ -1681,94 +1777,81 @@ const POSTS = [
 <!-- NAV -->
 <nav>
   <a class="nav-brand-wrap" href="#top" id="nav-brand">
-    <img class="brand-mark" src="./feels-method-logo.png" alt="F.E.E.L.S. Method logo">
-    <span class="nav-brand-copy"><strong>Ap'Real Feels</strong><span>F.E.E.L.S. Method</span></span>
+    <img class="brand-mark" src="./feels-method-logo.png" alt="Ap'Real Feels logo">
+    <span class="nav-brand-copy"><strong>Ap'Real Feels</strong><span>April Fields</span></span>
   </a>
   <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
   <div class="nav-links" id="nav-links">
     <a href="#writings">Writing</a>
     <a href="#about">About</a>
-    <a href="./feels-method-individuals.html">Individuals</a>
-    <a href="./The_F_E_E_L_S__Method___One_Slide.html.html">Organizations</a>
-    <a href="#books">Books</a>
-    <a href="./feels.html">Journal &amp; Advising</a>
-    <a href="#mentorship">Mentorship &amp; Advising</a>
-    <a href="./purpose-finder.html" class="nav-cta">Purpose Finder</a>
+    <a href="#mentorship">Mentorship</a>
+    <a href="#journal">Journal</a>
+    <a href="#books">Feels</a>
+    <a href="#subscribe" class="nav-cta">Get Updates</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-top-rule"></div>
-  <img class="hero-logo" src="./feels-method-logo.png" alt="F.E.E.L.S. Method — Fields of Freedom — Ap'Real Feels">
-  <span class="hero-eyebrow">The official home of the</span>
-  <h1 class="hero-title"><span class="drop">F</span>.E.E.L.S. <em>Method</em></h1>
-  <p class="hero-sub">One framework, two paths — a practical method for personal growth and empowered living, and a leadership edition for teams, organizations, and groups that want lasting impact.</p>
-  <div class="hero-kickers">
-  <a class="hero-kicker" href="./feels-method-individuals.html"><b>F.E.E.L.S. for Individuals</b> &nbsp;Face It · Embrace It · Engineer It · Live It · Sustain It</a>
-  <a class="hero-kicker" href="./The_F_E_E_L_S__Method___One_Slide.html.html"><b>F.E.E.L.S. for Organizations</b> &nbsp;Focus · Explore · Elevate · Lead · Sustain</a>
+<section class="hero2">
+  <div class="hero2-copy">
+    <span class="hero-eyebrow">Author · Mentor · Retired Army Officer</span>
+    <h1 class="hero2-title">I'm April Fields. I write about <em>becoming who you were always meant to be.</em></h1>
+    <p class="hero2-sub">Retired Army Signal Officer. Author of <em>Feels</em>, coming spring 2027. Mentor to people ready for their next season.</p>
+    <div class="hero2-cta">
+      <a class="btn-gold" href="#writings">Read my writing</a>
+      <a class="btn-ghost" href="#mentorship">Work with me</a>
+    </div>
   </div>
-  <span class="hero-author">Ap'Real Feels · Fields of Freedom</span>
+  <figure class="hero2-photo">
+    <img src="./april-hero.jpg" alt="April Fields">
+  </figure>
 </section>
+
+<div class="strip-wrap">
+  <a class="book-strip" href="#subscribe">
+    <span class="tag">Coming Spring 2027</span>
+    <strong><em>Feels</em> — a memoir</strong>
+    <span class="go">Get notified when it releases →</span>
+  </a>
+</div>
 
 <div class="mobile-jump" aria-label="Quick navigation">
   <a href="#writings">Writing</a>
   <a href="#about">About</a>
-  <a href="./feels-method-individuals.html">Individuals</a>
-  <a href="./The_F_E_E_L_S__Method___One_Slide.html.html">Organizations</a>
-  <a href="./feels.html">Journal &amp; Advising</a>
-  <a href="#quiz">Purpose</a>
-  <a href="#mentorship">Mentorship &amp; Advising</a>
-</div>
-
-<div class="feels-strips">
-  <a class="feels-strip-label" href="./feels-method-individuals.html">F.E.E.L.S. for Individuals →</a>
-  <div class="feels-strip" aria-label="F.E.E.L.S. for Individuals">
-    <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">F</span><strong>Face It</strong><span>Name what's really happening.</span></a>
-    <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">E</span><strong>Embrace It</strong><span>Claim your worth and your vision.</span></a>
-    <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">E</span><strong>Engineer It</strong><span>Design the boundaries and structure.</span></a>
-    <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">L</span><strong>Live It</strong><span>Embody the change every day.</span></a>
-    <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">S</span><strong>Sustain It</strong><span>Integrate it so it lasts.</span></a>
-  </div>
-  <a class="feels-strip-label" href="./The_F_E_E_L_S__Method___One_Slide.html.html">F.E.E.L.S. for Organizations →</a>
-  <div class="feels-strip" aria-label="F.E.E.L.S. for Organizations">
-    <a class="feels-mini" href="./The_F_E_E_L_S__Method___One_Slide.html.html"><span class="letter">F</span><strong>Focus</strong><span>Get clear on what matters.</span></a>
-    <a class="feels-mini" href="./The_F_E_E_L_S__Method___One_Slide.html.html"><span class="letter">E</span><strong>Explore</strong><span>Discover strengths and options.</span></a>
-    <a class="feels-mini" href="./The_F_E_E_L_S__Method___One_Slide.html.html"><span class="letter">E</span><strong>Elevate</strong><span>Build skills. Shift mindset.</span></a>
-    <a class="feels-mini" href="./The_F_E_E_L_S__Method___One_Slide.html.html"><span class="letter">L</span><strong>Lead</strong><span>Inspire others. Create impact.</span></a>
-    <a class="feels-mini" href="./The_F_E_E_L_S__Method___One_Slide.html.html"><span class="letter">S</span><strong>Sustain</strong><span>Live with purpose. Enjoy the freedom.</span></a>
-  </div>
-</div>
-
-<!-- FILTER TABS -->
-<div class="filter-wrap" id="filter-wrap">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <!-- populated by JS -->
+  <a href="#mentorship">Mentorship</a>
+  <a href="#journal">Journal</a>
+  <a href="#books">Feels</a>
+  <a href="#subscribe">Updates</a>
 </div>
 
 <!-- MAIN CONTENT -->
 <main class="main">
 
-  <!-- FEATURED -->
-  <div id="featured-section"></div>
+  <!-- START HERE -->
+  <div id="start" style="scroll-margin-top:70px">
+    <div class="section-header"><h2>Start Here</h2></div>
+    <p class="section-intro">New to my writing? Begin with these three.</p>
+    <div class="start-grid" id="start-grid"></div>
+  </div>
 
-  <!-- POSTS -->
+  <!-- WRITING -->
   <div id="writings" style="scroll-margin-top:70px">
-    <div class="section-header">
-      <h2>Latest Writing</h2>
+    <div class="section-header"><h2>Latest Writing</h2></div>
+    <div class="filter-wrap" id="filter-wrap">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <!-- populated by JS -->
     </div>
+    <div id="featured-section"></div>
     <div class="post-grid" id="post-grid"></div>
     <button class="load-more" id="load-more-btn">Load More ↓</button>
   </div>
 
-
   <!-- ABOUT -->
   <div id="about" style="scroll-margin-top:70px; margin-bottom:56px;">
-    <div class="section-header"><h2>About Ap'Real Feels</h2></div>
+    <div class="section-header"><h2>About April</h2></div>
     <div style="background:var(--card); border:1px solid var(--border); border-left:3px solid var(--gold); border-radius:3px; padding:36px;">
-      <div class="about-photo" style="float:right; margin:0 0 20px 28px; max-width:280px;">
-        <img src="april-retirement-toast.jpg" alt="April Fields toasting at her retirement celebration" style="width:100%; border-radius:3px; border:1px solid var(--border); box-shadow:0 12px 40px rgba(0,0,0,0.5); display:block;">
-        <div style="font-family:'Raleway',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-align:center; margin-top:10px;">Retirement Celebration · 2025</div>
+      <div class="about-photo" style="float:right; margin:0 0 20px 28px; max-width:280px; width:100%;">
+        <div class="photo-slot slot-45"><img src="./about-april.jpg" alt="April Fields" onerror="this.remove()"><span>Photo placeholder<small>about-april.jpg · portrait, about 1200 px wide</small></span></div>
       </div>
       <p style="font-family:'Playfair Display',serif; font-size:clamp(1.4rem,4vw,1.9rem); font-weight:900; color:var(--white); line-height:1.25; margin-bottom:24px;">Less than 1% of U.S. military officers are Black women.<br><em style="color:var(--gold);">April is one of them.</em></p>
       <p style="font-family:'EB Garamond',serif; font-size:1.05rem; line-height:1.9; color:var(--cream); margin-bottom:16px;">April Fields is a retired U.S. Army Officer, author, and intuitive mentor who knows what it means to build something from nothing.</p>
@@ -1784,93 +1867,68 @@ const POSTS = [
     </div>
   </div>
 
-  <!-- F.E.E.L.S. METHOD -->
-  <div id="method" style="scroll-margin-top:78px">
-    <div class="section-header">
-      <h2>The F.E.E.L.S. Method</h2>
-    </div>
-    <p class="method-intro">
-      One framework, two paths. <a href="./feels-method-individuals.html" style="color:var(--cream); font-weight:700; text-decoration:underline; text-underline-offset:3px;">F.E.E.L.S. for Individuals</a> takes one person from honest awareness to a freedom they can sustain. <a href="./The_F_E_E_L_S__Method___One_Slide.html.html" style="color:var(--cream); font-weight:700; text-decoration:underline; text-underline-offset:3px;">F.E.E.L.S. for Organizations</a> brings the same backbone to teams and groups that want clarity, strength, leadership, and lasting impact.
-    </p>
-
-    <!-- FOR INDIVIDUALS -->
-    <a href="./feels-method-individuals.html" aria-label="Explore the F.E.E.L.S. Method for Individuals"><img class="method-banner" src="./github-banner-individuals.svg" alt="F.E.E.L.S. Method for Individuals — Face It, Embrace It, Engineer It, Live It, Sustain It. Ap'Real Feels."></a>
-    <a class="method-card" href="./feels-method-individuals.html">
-      <div class="method-eyebrow">F.E.E.L.S. · For Individuals · Personal Growth &amp; Empowered Living</div>
-      <div class="method-grid five">
-        <div class="method-stage"><div class="method-mark">F</div><h4>Face It</h4><p>Name what's really happening.</p></div>
-        <div class="method-stage"><div class="method-mark">E</div><h4>Embrace It</h4><p>Claim your worth and your vision.</p></div>
-        <div class="method-stage"><div class="method-mark">E</div><h4>Engineer It</h4><p>Design the boundaries, rituals, and structure.</p></div>
-        <div class="method-stage"><div class="method-mark">L</div><h4>Live It</h4><p>Embody the change every day.</p></div>
-        <div class="method-stage"><div class="method-mark">S</div><h4>Sustain It</h4><p>Integrate it so it lasts.</p></div>
-      </div>
-      <div class="method-cta">Explore the F.E.E.L.S. Method for Individuals →</div>
-    </a>
-    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding:22px 24px; margin-top:-40px; margin-bottom:40px; background:var(--surface); border:1px solid var(--border); border-top:0; border-radius:0 0 8px 8px;">
-      <div style="display:flex; align-items:center; gap:16px;">
-        <img class="method-ad" src="./ad-square.svg" alt="Start the F.E.E.L.S. Method — You don't need another version of yourself. You need the freedom to become the one you've been trying to hear.">
-        <div>
-          <span style="font-size:0.58rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold);">The Self-Guided Journey</span>
-          <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--white); margin-top:5px;">Start the F.E.E.L.S. Method</div>
-        </div>
-      </div>
-      <a href="./feels.html" style="font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:10px 18px; background:var(--surface); color:var(--gold); border:1px solid var(--gold); border-radius:2px; text-decoration:none;">Explore the Journal &amp; Advising →</a>
-      <a href="https://stan.store/aprealfeels" target="_blank" rel="noopener" style="font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:10px 18px; background:var(--gold); color:var(--black); border-radius:2px; text-decoration:none;">Begin the F.E.E.L.S. Journey →</a>
-    </div>
-
-    <!-- FOR ORGANIZATIONS & GROUPS -->
-    <div class="method-divider" style="scroll-margin-top:78px">For Organizations &amp; Groups</div>
-    <a href="./The_F_E_E_L_S__Method___One_Slide.html.html" aria-label="View the F.E.E.L.S. Method for Organizations"><img class="method-banner" src="./github-banner-organizations.svg" alt="F.E.E.L.S. Method for Organizations — Focus, Explore, Elevate, Lead, Sustain. Ap'Real Feels."></a>
-    <a id="organizations" class="method-card" href="./The_F_E_E_L_S__Method___One_Slide.html.html" aria-label="Explore the F.E.E.L.S. Method for Organizations">
-      <div class="method-eyebrow">F.E.E.L.S. · For Organizations, Teams &amp; Groups</div>
-      <div class="method-grid five" style="margin-bottom:0">
-        <div class="method-stage"><div class="method-mark">F</div><h4>Focus</h4><p>Get clear on what matters.</p></div>
-        <div class="method-stage"><div class="method-mark">E</div><h4>Explore</h4><p>Discover your strengths and options.</p></div>
-        <div class="method-stage"><div class="method-mark">E</div><h4>Elevate</h4><p>Build skills. Shift mindset. Take action.</p></div>
-        <div class="method-stage"><div class="method-mark">L</div><h4>Lead</h4><p>Inspire others. Create impact.</p></div>
-        <div class="method-stage"><div class="method-mark">S</div><h4>Sustain</h4><p>Live with purpose. Enjoy the freedom.</p></div>
-      </div>
-    </a>
-    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding:22px 24px; margin-top:-40px; margin-bottom:56px; background:var(--surface); border:1px solid var(--border); border-top:0; border-radius:0 0 8px 8px;">
-      <div>
-        <span style="font-size:0.58rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold);">For Teams &amp; Organizations</span>
-        <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--white); margin-top:5px;">Start with the F.E.E.L.S. Organizational Workbook</div>
-      </div>
-      <a href="https://stan.store/aprealfeels" target="_blank" rel="noopener" style="font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:10px 18px; background:var(--gold); color:var(--black); border-radius:2px; text-decoration:none;">Explore the Organization Workbook →</a>
-    </div>
-  </div>
-
-  <!-- PURPOSE QUIZ -->
-  <div id="quiz" style="scroll-margin-top:70px">
-    <div class="section-header">
-      <h2>Find Your Purpose</h2>
-    </div>
-    <a href="./purpose-finder.html" style="text-decoration:none; display:block;">
-      <div class="featured-card" style="text-align:center;">
-        <div class="featured-label" style="justify-content:center;">Free Quiz</div>
-        <h3>Which F.E.E.L.S. Season Are You In?</h3>
-        <p class="excerpt">Ten short questions on your skills, your passions, and what people already trust you for. Use the quiz to find the season you are in right now — Face It, Embrace It, Engineer It, Live It, or Sustain It — and your next step.</p>
-        <div class="card-meta" style="justify-content:center;">
-          <span class="card-read" style="margin-left:0;">Take the Quiz →</span>
-        </div>
-      </div>
-    </a>
-  </div>
-
+  
   <!-- MENTORSHIP -->
   <div id="mentorship" style="scroll-margin-top:70px">
-    <div class="section-header">
-      <h2>Mentorship &amp; Advising</h2>
+    <div class="section-header"><h2>Mentorship &amp; Advising</h2></div>
+    <div class="mentor-intro">
+      <div class="photo-slot slot-32"><img src="./mentorship-april.jpg" alt="April Fields in conversation" onerror="this.remove()"><span>Photo placeholder<small>mentorship-april.jpg · landscape 3:2, about 1400 px wide</small></span></div>
+      <div>
+        <p>My mentorship is built on the F.E.E.L.S. Method for individuals: five stages that take a person from honest awareness to a freedom they can sustain.</p>
+        <p><a href="./feels-method-individuals.html" style="color:var(--gold-hi);">See how the Method works →</a></p>
+      </div>
     </div>
-    <div id="mentorship-grid"></div>
+    <div class="feels-strips">
+      <a class="feels-strip-label" href="./feels-method-individuals.html">The F.E.E.L.S. Method →</a>
+      <div class="feels-strip" aria-label="F.E.E.L.S. for Individuals">
+        <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">F</span><strong>Face It</strong><span>Name what's really happening.</span></a>
+        <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">E</span><strong>Embrace It</strong><span>Claim your worth and your vision.</span></a>
+        <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">E</span><strong>Engineer It</strong><span>Design the boundaries and structure.</span></a>
+        <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">L</span><strong>Live It</strong><span>Embody the change every day.</span></a>
+        <a class="feels-mini" href="./feels-method-individuals.html"><span class="letter">S</span><strong>Sustain It</strong><span>Integrate it so it lasts.</span></a>
+      </div>
+    </div>
+    <div id="mentorship-grid" style="margin-bottom:56px;"></div>
   </div>
 
-  <!-- BOOKS -->
-  <div id="books" style="scroll-margin-top:70px">
-    <div class="section-header">
-      <h2>The Books</h2>
+  <!-- JOURNAL (coming soon) -->
+  <div id="journal" style="scroll-margin-top:70px">
+    <div class="section-header"><h2>The Journal</h2></div>
+    <div class="journal-card">
+      <div id="journal-media"></div>
+      <div>
+        <span class="book-status">Coming Soon</span>
+        <h3>FEELS — The Self-Mastery Journal</h3>
+        <div class="journal-by">by April Fields</div>
+        <div class="journal-quote">What is life showing me right now, and what am I going to do with what I see?</div>
+        <p class="body">A personal operating journal you return to throughout life, not a workbook you finish.</p>
+        <a class="btn-gold" href="#subscribe">Be first to know</a>
+      </div>
     </div>
-    <div class="books-grid" id="books-grid"></div>
+  </div>
+
+  <!-- BOOK -->
+  <div id="books" style="scroll-margin-top:70px">
+    <div class="section-header"><h2>The Book</h2></div>
+    <div class="book-wrap">
+      <div>
+        <div class="books-grid" id="books-grid"></div>
+        <div class="book-notify"><a class="btn-gold" href="#subscribe">Get notified when <em>Feels</em> releases</a></div>
+      </div>
+      <div class="photo-slot slot-45"><img src="./book-writing.jpg" alt="April Fields writing Feels" onerror="this.remove()"><span>Photo placeholder<small>book-writing.jpg · writing-process shot, about 1200 px wide</small></span></div>
+    </div>
+  </div>
+
+  <!-- EMAIL LIST -->
+  <div id="subscribe" class="subscribe-card" style="scroll-margin-top:70px">
+    <h3>Get new writing, first.</h3>
+    <p class="lede">Essays, memoir excerpts, and first word on the journal and <em>Feels</em>. No spam. Unsubscribe anytime.</p>
+    <form class="subscribe-form" id="subscribe-form">
+      <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required autocomplete="email" aria-label="Email address">
+      <button class="btn-gold" type="submit">Join the list</button>
+    </form>
+    <div id="subscribe-msg" role="status" aria-live="polite"></div>
+    <div class="subscribe-fine">By joining you agree to the <a href="./privacy.html">Privacy Policy</a>.</div>
   </div>
 
 </main>
@@ -1939,6 +1997,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderGrid('all');
   renderBooks();
   renderMentorship();
+  renderStartHere();
+  renderJournalMedia();
+  initSubscribe();
 });
 
 // ── MENTORSHIP & ADVISING ──
@@ -2017,10 +2078,64 @@ function renderMentorship() {
   `;
 }
 
+// ── START HERE ──
+function startHerePosts() {
+  return START_HERE.map(s => {
+    const post = POSTS.find(p => p.title.startsWith(s.match));
+    return post ? { post, role: s.role } : null;
+  }).filter(Boolean);
+}
+function renderStartHere() {
+  const grid = document.getElementById('start-grid');
+  const picks = startHerePosts();
+  if (!picks.length) { document.getElementById('start').style.display = 'none'; return; }
+  grid.innerHTML = picks.map(({ post, role }) => `
+    <div class="post-card" onclick="openModal(${post.id})">
+      <span class="start-role">${role}</span>
+      <h3>${post.title}</h3>
+      <p class="excerpt">${post.excerpt}</p>
+      <div class="card-meta">
+        <span class="card-read" style="margin-left:auto; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold)">Read →</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── JOURNAL VIDEO / PLACEHOLDER ──
+function renderJournalMedia() {
+  const el = document.getElementById('journal-media');
+  el.innerHTML = JOURNAL.video
+    ? `<div class="journal-video"><iframe src="${JOURNAL.video}" title="FEELS — The Self-Mastery Journal" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+    : `<div class="photo-slot slot-169"><span>Video placeholder<small>Journal walkthrough. Paste the embed link into JOURNAL.video</small></span></div>`;
+}
+
+// ── EMAIL SIGNUP ──
+function initSubscribe() {
+  const form = document.getElementById('subscribe-form');
+  const input = document.getElementById('subscribe-email');
+  const msg = document.getElementById('subscribe-msg');
+  if (SITE.emailFormAction) {
+    form.action = SITE.emailFormAction;
+    form.method = 'POST';
+    form.target = '_blank';
+    input.name = SITE.emailFieldName || 'email';
+    form.addEventListener('submit', () => { msg.textContent = 'Thank you. Check the new tab to confirm your signup.'; });
+  } else {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const addr = input.value.trim();
+      const subject = encodeURIComponent('Add me to your email list');
+      const body = encodeURIComponent('Please add me to your email list: ' + addr);
+      window.location.href = 'mailto:' + SITE.email + '?subject=' + subject + '&body=' + body;
+      msg.textContent = 'Your email app should open with a message ready to send.';
+    });
+  }
+}
+
 // ── FILTERS ──
 const allTags = [...new Set(POSTS.map(p => p.tag))];
 let currentFilter = 'all';
-const POSTS_PER_PAGE = 4;
+const POSTS_PER_PAGE = 6;
 let showing = POSTS_PER_PAGE;
 
 function buildFilters() {
@@ -2070,7 +2185,8 @@ function renderFeatured() {
 // ── GRID ──
 function renderGrid(filter) {
   const grid = document.getElementById('post-grid');
-  const filtered = POSTS.filter(p => !p.featured && (filter === 'all' || p.tag === filter));
+  const startIds = filter === 'all' ? startHerePosts().map(x => x.post.id) : [];
+  const filtered = POSTS.filter(p => !p.featured && !startIds.includes(p.id) && (filter === 'all' || p.tag === filter));
   const visible = filtered.slice(0, showing);
 
   grid.innerHTML = visible.map(p => `
