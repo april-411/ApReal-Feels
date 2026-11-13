@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which F.E.E.L.S. Stage Are You In? · Ap'Real Feels</title>
+<meta name="description" content="Eight short questions to find the stage of the F.E.E.L.S. Method you're in right now (Face It, Embrace It, Engineer It, Live It or Sustain It) and your next move.">
+<meta property="og:title" content="Which F.E.E.L.S. Stage Are You In?">
+<meta property="og:description" content="Eight short questions. Find your stage, and your next move.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0906; --card:#16140d; --gold:#c9a15c; --gold-bright:#e8c77e;
+    --gold-dim:rgba(201,161,92,0.35); --cream:#f3ede0; --muted:#a89a7d; --line:rgba(201,161,92,0.22);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:radial-gradient(ellipse 120% 60% at 50% -10%, rgba(201,161,92,0.10), transparent 60%), var(--bg);
+    color:var(--cream); font-family:'EB Garamond',serif; min-height:100vh; padding:28px 16px 40px;
+  }
+  .stage{width:100%; max-width:480px; margin:0 auto;}
+  .back{display:inline-block; margin-bottom:22px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); text-decoration:none;}
+  .back:hover{color:var(--gold-bright);}
+  .eyebrow{font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); text-align:center; display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:18px;}
+  .eyebrow::before,.eyebrow::after{content:""; height:1px; width:24px; background:var(--gold-dim);}
+  h1{font-family:'Playfair Display',serif; font-weight:600; font-size:clamp(28px,7vw,38px); line-height:1.15; text-align:center; margin:0 0 14px;}
+  h1 em{font-style:italic; color:var(--gold-bright);}
+  .lede{text-align:center; color:var(--muted); font-size:17px; line-height:1.6; margin:0 auto 26px; max-width:400px;}
+  .btn{display:block; width:100%; background:transparent; border:1px solid var(--gold); color:var(--gold-bright); font-family:'EB Garamond',serif; font-size:15px; letter-spacing:.14em; text-transform:uppercase; padding:16px 20px; border-radius:2px; cursor:pointer; text-align:center; text-decoration:none; transition:background .25s,color .25s;}
+  .btn:hover,.btn:focus-visible{background:var(--gold); color:#171208; outline:none;}
+  .btn:focus-visible{box-shadow:0 0 0 3px rgba(201,161,92,.35);}
+  .btn[disabled]{opacity:.6; cursor:default;}
+  .btn-ghost{border-color:var(--line); color:var(--muted);}
+  .btn-ghost:hover,.btn-ghost:focus-visible{background:transparent; color:var(--gold-bright); border-color:var(--gold);}
+
+  .stages-row{display:flex; justify-content:center; gap:10px; margin:0 0 28px;}
+  .dot{width:38px; height:38px; border-radius:50%; border:1px solid var(--gold-dim); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:700; color:var(--gold-bright); font-size:17px;}
+
+  .field-progress{display:flex; align-items:center; gap:14px; margin-bottom:22px;}
+  .row-label{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); white-space:nowrap;}
+  .track{flex:1; height:1px; background:var(--line); position:relative;}
+  .fill{position:absolute; left:0; top:-1px; height:3px; background:var(--gold); transition:width .45s;}
+
+  .card{background:var(--card); border:1px solid var(--line); padding:28px 22px; border-radius:2px;}
+  .q-text{font-family:'Playfair Display',serif; font-weight:600; font-style:italic; font-size:clamp(21px,5.5vw,25px); line-height:1.35; margin:0 0 22px;}
+  .options{display:flex; flex-direction:column; gap:10px;}
+  .option{text-align:left; background:transparent; border:1px solid var(--line); color:var(--cream); font-family:'EB Garamond',serif; font-size:17px; line-height:1.4; padding:14px 16px; border-radius:2px; cursor:pointer; transition:border-color .2s,background .2s;}
+  .option:hover,.option:focus-visible{border-color:var(--gold); background:rgba(201,161,92,.08); outline:none;}
+  .prev{margin-top:16px; background:none; border:0; color:var(--muted); font-family:'EB Garamond',serif; font-size:13px; letter-spacing:.16em; text-transform:uppercase; cursor:pointer; padding:6px 0;}
+  .prev:hover{color:var(--gold-bright);}
+
+  .badge-wrap{display:flex; justify-content:center; margin:6px 0 22px;}
+  .badge-ring{width:112px; height:112px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; position:relative; font-family:'Playfair Display',serif; font-weight:700; font-size:54px; color:var(--gold-bright);}
+  .badge-ring::before{content:""; position:absolute; inset:-8px; border:1px solid rgba(201,161,92,.12); border-radius:50%;}
+  .result-eyebrow{text-align:center; font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+  .result-name{font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(32px,9vw,44px); text-align:center; color:var(--gold-bright); margin:0 0 6px;}
+  .result-stage{text-align:center; font-style:italic; color:var(--muted); font-size:17px; margin:0 0 22px;}
+  .result-desc{font-size:18px; line-height:1.7; margin:0 0 6px;}
+  .also{font-size:15px; color:var(--muted); font-style:italic; margin:10px 0 0; line-height:1.6;}
+  .divider{height:1px; background:var(--line); margin:24px 0;}
+  .h-small{font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); margin:0 0 12px;}
+  .ask{font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.4; color:var(--gold-bright); margin:0 0 14px; padding-left:14px; border-left:2px solid var(--gold-dim);}
+  ul.steps{margin:0; padding:0; list-style:none;}
+  ul.steps li{position:relative; padding-left:22px; margin-bottom:10px; font-size:17px; line-height:1.55;}
+  ul.steps li::before{content:"✦"; position:absolute; left:0; top:1px; color:var(--gold); font-size:12px;}
+  .next{font-size:16px; color:var(--muted); line-height:1.6; margin:16px 0 0;}
+  .breakdown-row{display:flex; align-items:center; gap:12px; margin-bottom:10px; font-size:13px;}
+  .breakdown-row .label{width:92px; color:var(--muted); letter-spacing:.05em;}
+  .bar-track{flex:1; height:5px; background:rgba(255,255,255,.06); position:relative; border-radius:2px;}
+  .bar-fill{position:absolute; left:0; top:0; height:100%; background:var(--gold); border-radius:2px; transition:width .6s;}
+  .breakdown-row.top .label{color:var(--gold-bright);}
+  .breakdown-row .val{width:18px; text-align:right; color:var(--muted);}
+  .cta-group{margin-top:24px; display:flex; flex-direction:column; gap:10px;}
+  .save-card{margin-top:28px;}
+  .save-card p{font-size:16px; line-height:1.6; color:var(--muted); margin:0 0 14px;}
+  .save-card input[type=email]{width:100%; background:transparent; border:1px solid var(--line); color:var(--cream); font-family:'EB Garamond',serif; font-size:16px; padding:14px 16px; border-radius:2px; margin-bottom:12px;}
+  .save-card input[type=email]:focus{outline:none; border-color:var(--gold);}
+  .consent{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted); margin-bottom:16px; line-height:1.5;}
+  .consent input{margin-top:3px;}
+  .consent a{color:var(--gold-bright);}
+  #saveMsg{font-size:14px; color:var(--gold-bright); text-align:center; margin:12px 0 0; min-height:1.2em;}
+  .note{margin-top:26px; text-align:center; font-size:12px; line-height:1.6; color:var(--muted);}
+  .note a{color:var(--gold-bright);}
+  @media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <a class="back" href="index.html">← Back to Ap'Real Feels</a>
+  <div id="app"></div>
+  <p class="note">This is a reflection tool for personal growth. It is not therapy, diagnosis, or professional advice. See the <a href="disclaimer.html">Disclaimer</a>.</p>
+</div>
+
+<script>
+/* ── EMAIL (optional, shown after results) ────────────────────────────────
+   To collect emails in your list service, paste its form POST URL below
+   (Formspree, Kit, MailerLite, Buttondown, etc.). While this is empty, the
+   form opens an email to CONTACT_EMAIL so no signup is silently lost.      */
+const FORM_ENDPOINT = "";
+const CONTACT_EMAIL = "fieldsoffreedom411@gmail.com";
+const STAN_STORE = "https://stan.store/aprealfeels";
+
+const STAGES = ["face","embrace","engineer","live","sustain"];
+
+const STAGE_INFO = {
+  face: {
+    letter:"F", name:"Face It", word:"Awareness",
+    desc:"You're in the season of seeing clearly. Something in your life is asking for your honest attention: a pattern, a feeling, a situation you've outgrown. Facing it isn't about blame. It's a compassionate audit of where you are, without judgment and without looking away.",
+    ask:"What is really happening right now, and where is my energy going?",
+    steps:[
+      "Write for ten minutes about what you've been avoiding or explaining away.",
+      "List where your energy leaks: people, habits, places, commitments.",
+      "Notice your default response when things get hard: shutting down, over-functioning, deflecting, pleasing."
+    ],
+    next:"When you can name what's true without flinching, you're ready for Embrace It."
+  },
+  embrace: {
+    letter:"E", name:"Embrace It", word:"Authority",
+    desc:"You see what's true, and now you're deciding who you are and what you want. This is the shift from hoping to commanding: claiming your worth, naming your vision, and saying it out loud.",
+    ask:"What do I claim as my worth and my vision?",
+    steps:[
+      "Finish this sentence in writing, three different ways: \"I am worthy of…\"",
+      "Describe the life you want in the present tense, with specifics.",
+      "Say one thing out loud this week that you've only thought privately."
+    ],
+    next:"When your vision is clear and you believe it's yours, you're ready for Engineer It."
+  },
+  engineer: {
+    letter:"E", name:"Engineer It", word:"Structure",
+    desc:"You know what you want. Now the work is building the conditions that make it possible, so the change doesn't rely on willpower alone. Boundaries, rituals, and structure are how a vision becomes livable.",
+    ask:"What boundary, ritual, or structure would make this easier to keep?",
+    steps:[
+      "Choose one boundary to set, and write the exact words you'll use.",
+      "Create one daily or weekly ritual that supports your vision.",
+      "Remove one point of friction that keeps pulling you back."
+    ],
+    next:"When the structure is in place, you're ready to Live It."
+  },
+  live: {
+    letter:"L", name:"Live It", word:"Embodiment",
+    desc:"You've moved from planning to practice. The change is showing up in how you actually move through your days, and this is where it gets tested. Living it means acting from your new standards even when it's inconvenient.",
+    ask:"What will I do today that shows this change is real?",
+    steps:[
+      "Pick one standard and act from it today, even when it costs you something.",
+      "Notice a trigger that no longer lands the way it used to, and name it.",
+      "End each day by answering: what did I do that shows this change is real?"
+    ],
+    next:"When it stops feeling like effort and starts feeling like you, you're ready to Sustain It."
+  },
+  sustain: {
+    letter:"S", name:"Sustain It", word:"Lasting Integration",
+    desc:"Your growth is becoming part of your identity. The work now is integration: absorbing what you've learned so it's permanent, not a phase. You're protecting what you've built and letting it deepen.",
+    ask:"How do I make this part of who I am, not just something I'm doing?",
+    steps:[
+      "Write down your three biggest shifts and who you were before each one.",
+      "Identify what protects your progress: people, practices, places.",
+      "Decide how you'll begin again with compassion when life shifts. That's a return to Face It, not a failure."
+    ],
+    next:"Growth is a cycle. When life shifts, you begin again at Face It, from a stronger place."
+  }
+};
+
+/* Every question has one answer per stage, so each stage can score 0 to 8. */
+const QUESTIONS = [
+  { q:"Right now, the truest thing about where I am is:", opts:{
+    face:"Something feels off, and I'm ready to look at it honestly.",
+    embrace:"I see what's true, and I'm deciding what I want instead.",
+    engineer:"I know what I want. Now I'm designing how to get there.",
+    live:"I have a plan, and I'm putting it into practice.",
+    sustain:"I've made real change, and I want it to last." }},
+  { q:"When something hard shows up, my first move is to:", opts:{
+    face:"Slow down and ask what's really happening underneath it.",
+    embrace:"Remind myself what I'm worth and what I'm choosing.",
+    engineer:"Set a boundary or a routine so it doesn't repeat.",
+    live:"Respond the way the person I'm becoming would.",
+    sustain:"Notice how far I've come and keep my footing." }},
+  { q:"The question I keep asking myself is:", opts:{
+    face:"Where is my energy actually going?",
+    embrace:"What do I truly want, and do I believe I deserve it?",
+    engineer:"What structure would make this easier to keep?",
+    live:"What will I do today to show this is real?",
+    sustain:"How do I make this part of who I am?" }},
+  { q:"What I need most right now is:", opts:{
+    face:"Clarity, to see the whole picture without looking away.",
+    embrace:"Permission to claim my worth and say what I want out loud.",
+    engineer:"A plan, with boundaries and rituals I can lean on.",
+    live:"Accountability and momentum to follow through.",
+    sustain:"Ways to protect and deepen what's already working." }},
+  { q:"My biggest obstacle is:", opts:{
+    face:"Avoiding what I already know, or staying too busy to look.",
+    embrace:"Doubting that I'm allowed to want more.",
+    engineer:"Good intentions with nothing built to carry them.",
+    live:"Falling back into old habits when life gets loud.",
+    sustain:"Wondering whether the change will hold." }},
+  { q:"If someone who loves me described this season, they'd say:", opts:{
+    face:"\"You're carrying a lot you haven't had time to sort through.\"",
+    embrace:"\"You're waking up to who you are and what you want.\"",
+    engineer:"\"You're building something intentional, piece by piece.\"",
+    live:"\"You're showing up differently, and it's visible.\"",
+    sustain:"\"You're steady now. This has become who you are.\"" }},
+  { q:"A good week for me looks like:", opts:{
+    face:"An honest conversation or journal entry that finally names what's true.",
+    embrace:"Saying yes to something I used to talk myself out of.",
+    engineer:"A new boundary held, or a routine that finally sticks.",
+    live:"Acting on my standards even when it's inconvenient.",
+    sustain:"Feeling grounded, with the new way of living feeling natural." }},
+  { q:"The change I'm after is:", opts:{
+    face:"To understand the pattern I keep repeating.",
+    embrace:"To step into a vision I'm ready to claim.",
+    engineer:"To build the structure of a life that supports me.",
+    live:"To make my daily life match what I've decided.",
+    sustain:"To make my growth permanent, not a phase." }}
+];
+
+let current = 0;
+let answers = [];   // stage key chosen for each question
+const app = document.getElementById('app');
+
+function shuffle(a){ a = a.slice(); for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function tally(){ const s={face:0,embrace:0,engineer:0,live:0,sustain:0}; answers.forEach(k=>{ if(k in s) s[k]++; }); return s; }
+/* Highest score wins. A tie goes to the earlier stage, because the earlier work comes first. */
+function ranking(scores){
+  return STAGES.map((k,i)=>({k,i,n:scores[k]})).sort((a,b)=> b.n-a.n || a.i-b.i);
+}
+
+function renderIntro(){
+  app.innerHTML = `
+    <div class="eyebrow">The F.E.E.L.S. Method</div>
+    <h1>Which Stage Are <em>You In?</em></h1>
+    <p class="lede">Eight short questions. No right answers. Choose what's true for you right now, and you'll see your stage of the Method and your next move.</p>
+    <div class="stages-row" aria-hidden="true">${["F","E","E","L","S"].map(l=>`<span class="dot">${l}</span>`).join('')}</div>
+    <button class="btn" id="startBtn">Begin</button>`;
+  document.getElementById('startBtn').addEventListener('click', ()=>{ current=0; answers=[]; renderQuestion(); });
+}
+
+function renderQuestion(){
+  const total = QUESTIONS.length, item = QUESTIONS[current];
+  const pct = Math.round((current/total)*100);
+  const order = shuffle(STAGES);
+  app.innerHTML = `
+    <div class="field-progress">
+      <span class="row-label">Question ${current+1} of ${total}</span>
+      <div class="track"><div class="fill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="card">
+      <p class="q-text">${item.q}</p>
+      <div class="options">
+        ${order.map(k=>`<button class="option" data-key="${k}">${item.opts[k]}</button>`).join('')}
+      </div>
+      ${current>0 ? '<button class="prev" id="prevBtn">← Previous</button>' : ''}
+    </div>`;
+  document.querySelectorAll('.option').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      answers[current] = btn.getAttribute('data-key');
+      current++;
+      current < QUESTIONS.length ? renderQuestion() : renderResults();
+    });
+  });
+  const prev = document.getElementById('prevBtn');
+  if (prev) prev.addEventListener('click', ()=>{ current--; answers.length = current; renderQuestion(); });
+}
+
+function resultsSummary(){
+  const r = ranking(tally());
+  return STAGE_INFO[r[0].k].name;
+}
+
+function buildMailto(email){
+  const scores = tally(), r = ranking(scores);
+  const lines = STAGES.map(k=>`${STAGE_INFO[k].name}: ${scores[k]}/${QUESTIONS.length}`).join('\n');
+  const subject = encodeURIComponent('F.E.E.L.S. quiz results and email list signup');
+  const body = encodeURIComponent(`Please add me to your email list: ${email}\n\nMy stage: ${STAGE_INFO[r[0].k].name}\n${lines}`);
+  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+function renderResults(){
+  const scores = tally(), r = ranking(scores), total = QUESTIONS.length;
+  const top = STAGE_INFO[r[0].k];
+  const second = r[1].n > 0 && r[1].n >= r[0].n - 1 ? STAGE_INFO[r[1].k] : null;
+  app.innerHTML = `
+    <div class="badge-wrap"><div class="badge-ring" aria-hidden="true">${top.letter}</div></div>
+    <div class="result-eyebrow">Your stage right now</div>
+    <h2 class="result-name">${top.name}</h2>
+    <p class="result-stage">${top.word}</p>
+    <p class="result-desc">${top.desc}</p>
+    ${second ? `<p class="also">You're also drawing on <strong>${second.name}</strong>. Seasons overlap, and that's normal.</p>` : ''}
+    <div class="divider"></div>
+    <p class="h-small">Your next move</p>
+    <p class="ask">${top.ask}</p>
+    <ul class="steps">${top.steps.map(s=>`<li>${s}</li>`).join('')}</ul>
+    <p class="next">${top.next}</p>
+    <div class="divider"></div>
+    <p class="h-small">Your full picture</p>
+    ${r.map(x=>`
+      <div class="breakdown-row ${x.k===r[0].k?'top':''}">
+        <span class="label">${STAGE_INFO[x.k].name}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.round((x.n/total)*100)}%"></div></div>
+        <span class="val">${x.n}</span>
+      </div>`).join('')}
+    <div class="cta-group">
+      <a class="btn" href="${STAN_STORE}" target="_blank" rel="noopener">Explore 1:1 Mentorship</a>
+      <a class="btn btn-ghost" href="index.html#writings">Read my writing</a>
+      <button class="btn btn-ghost" id="retakeBtn">Retake the quiz</button>
+    </div>
+    <div class="card save-card">
+      <p class="h-small">Keep going</p>
+      <p>Want your results in your inbox, plus new writing and first word on the journal and <em>Feels</em>? Join the list. It's optional.</p>
+      <form id="saveForm">
+        <input type="email" id="saveEmail" required placeholder="you@email.com" autocomplete="email" aria-label="Email address">
+        <label class="consent"><input type="checkbox" id="saveConsent" required><span>Send me my results and occasional emails from Ap'Real Feels. Unsubscribe anytime. See the <a href="privacy.html">Privacy Policy</a>.</span></label>
+        <button class="btn" type="submit" id="saveBtn">Send me my results</button>
+        <p id="saveMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>`;
+  document.getElementById('retakeBtn').addEventListener('click', renderIntro);
+  window.scrollTo({top:0});
+  document.getElementById('saveForm').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const email = document.getElementById('saveEmail').value.trim();
+    const msg = document.getElementById('saveMsg'), btn = document.getElementById('saveBtn');
+    if (!FORM_ENDPOINT){
+      window.location.href = buildMailto(email);
+      msg.textContent = 'Your email app should open with a message ready to send.';
+      return;
+    }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try{
+      const res = await fetch(FORM_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({ email, feels_stage: resultsSummary(), scores: tally(), source:'F.E.E.L.S. Stage Quiz' }) });
+      if (!res.ok) throw new Error('bad response');
+      msg.textContent = 'Thank you. You\'re on the list.';
+      btn.textContent = 'Sent';
+    }catch(err){
+      btn.disabled = false; btn.textContent = 'Send me my results';
+      msg.textContent = 'That didn\'t go through. Please try again in a moment.';
+    }
+  });
+}
+
+renderIntro();
+</script>
+</body>
+</html>
